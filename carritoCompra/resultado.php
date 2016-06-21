@@ -1,0 +1,44 @@
+Array
+(
+    [mc_gross] => 1.00
+    [protection_eligibility] => Eligible
+    [address_status] => confirmed
+    [payer_id] => FE55CKX7N2H3S
+    [tax] => 0.00
+    [address_street] => 1 Main St
+    [payment_date] => 00:39:23 Aug 13, 2013 PDT
+    [payment_status] => Pending
+    [charset] => windows-1252
+    [address_zip] => 95131
+    [first_name] => Eugenio
+    [address_country_code] => US
+    [address_name] => Eugenio Chaparro's Test Store
+    [notify_version] => 3.7
+    [custom] => 1
+    [payer_status] => verified
+    [business] => eucm4@hotmail.com
+    [address_country] => United States
+    [address_city] => San Jose
+    [quantity] => 1
+    [payer_email] => eucm3@hotmail.com
+    [verify_sign] => AFcWxV21C7fd0v3bYYYRCpSSRl31APsEVXvUc1vZwRLMS7ONuMBVYDnB
+    [txn_id] => 1H759581533860319
+    [payment_type] => instant
+    [payer_business_name] => Eugenio Chaparro's Test Store
+    [last_name] => Chaparro
+    [address_state] => CA
+    [receiver_email] => eucm4@hotmail.com
+    [receiver_id] => 3U3FZE6B89QKA
+    [pending_reason] => verify
+    [txn_type] => web_accept
+    [item_name] => 1 unidad de1 PULS. 101 V 4+N SKYLINE
+    [mc_currency] => USD
+    [item_number] => Nombre del comprador
+    [residence_country] => US
+    [test_ipn] => 1
+    [handling_amount] => 0.00
+    [transaction_subject] => 1
+    [payment_gross] => 1.00
+    [shipping] => 0.00
+    [auth] => AQaG3Sv1bRDz0CZBFPGxmS37KIWnP1xL8DzSyO3TKqdGrk6SmC97vL58vXrmaEdd-UjdN1jgrJ-2X24ijVMsvJA
+)
