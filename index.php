@@ -63,8 +63,9 @@
 				<ul>
 					<li><a href="index.php">inicio</a></li><li><span></span></li>
 					<li><a href="politicas.php">condiciones y uso</a></li><li><span></span></li>
-					<li><a href="registro.php">registro</a></li><li><span></span></li>
-					<li><a href="clientes.php" class="divider">Vender</a></li>
+					<li><a href="productos_insert.php" >Vender</a></li><li><span></span></li>
+					<li><a href="registro.php" >Registrarse</a></li><li><span></span></li>
+					<li><a href="login.html" class="divider">Login</a></li>
 				</ul>
 
         <br>
@@ -121,11 +122,18 @@
 
 							echo "<img src = '$imagen' width ='160' height = '160'";
 							echo "<br>";
+							echo "<br/>";
+							echo "<br>";
+							echo "<br/>";
+							echo "<br>";
+							echo "<br/>";
+							echo "<br>";
+							echo "<br/>";
 							echo "<p>"; echo "$precio" . "$". "&nbsp"; "</p>";
 							echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
 							echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
 							echo "<br>";
-							echo "<br/>";
+
             	echo '<form class="" action="descripcion.php" method="post">';
 							echo "<input type= 'hidden' name='ID' value='$ID'>";
 							echo ' <input type="submit" name="name" value="detalle" ';
@@ -168,10 +176,12 @@
       <br>
       <br>
         <br>
+				<br>
+	        <br>
 
 		<div id="headder">
       <div>
-      <p class="pull-left">&copy; <?php echo date('Y') ?> - derechos reservados.</p>
+      <p class="pull-left">&copy; <?php echo date('Y') ?> - DERECHOS RESERVADOS. <br>ver.1.0</p>
       </div>
 
 
