@@ -63,8 +63,8 @@
 				<ul>
 					<li><a href="index.php">inicio</a></li><li><span></span></li>
 					<li><a href="politicas.php">condiciones y uso</a></li><li><span></span></li>
+					<li><a href="registro.php">registro</a></li><li><span></span></li>
 					<li><a href="productos_insert.php" >Vender</a></li><li><span></span></li>
-					<li><a href="registro.php" >Registrarse</a></li><li><span></span></li>
 					<li><a href="login.html" class="divider">Login</a></li>
 				</ul>
 
@@ -119,16 +119,12 @@
              	echo "<h2>";
 							echo $nombre;
 							echo "</h2>";
+							echo "<table>";
+							echo "<tr>";
+							echo "<hide>";
+							echo "<td><img src = '$imagen' width ='160' height = '160'><td/>";
 
-							echo "<img src = '$imagen' width ='160' height = '160'";
-							echo "<br>";
-							echo "<br/>";
-							echo "<br>";
-							echo "<br/>";
-							echo "<br>";
-							echo "<br/>";
-							echo "<br>";
-							echo "<br/>";
+							echo "</table>";
 							echo "<p>"; echo "$precio" . "$". "&nbsp"; "</p>";
 							echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
 							echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
@@ -137,7 +133,7 @@
             	echo '<form class="" action="descripcion.php" method="post">';
 							echo "<input type= 'hidden' name='ID' value='$ID'>";
 							echo ' <input type="submit" name="name" value="detalle" ';
-
+							echo "</hide>";
 							echo "</div>";
 
                echo "</div>";
@@ -176,12 +172,10 @@
       <br>
       <br>
         <br>
-				<br>
-	        <br>
 
 		<div id="headder">
       <div>
-      <p class="pull-left">&copy; <?php echo date('Y') ?> - DERECHOS RESERVADOS. <br>ver.1.0</p>
+      <p class="pull-left">&copy; <?php echo date('Y') ?> - derechos reservados.</p>
       </div>
 
 

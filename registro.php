@@ -25,10 +25,10 @@
 
 
         <form action="index.html" method="post" style=" float:left;margin:-110px 500px 0px" data-role="controlgroup">
-					<h1></h1 data-role="navbar">
+
 						<div data-role="navbar">
     <ul>
-        <li><a href="#" class="ui-btn-active">Formulario de subcripcion</a></li>
+        <li><a class="ui-btn-active">Formulario de subcripcion</a></li>
     </ul>
 </div>
 

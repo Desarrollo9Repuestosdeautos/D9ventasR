@@ -1,46 +1,7 @@
 <?php
 
-/**
- *****************************************************************************************************
- *      Este script permanece libre mientras estas lineas permanezcan intactas
- *****************************************************************************************************
- *      Nombre de
- *      Archivo         :               PHPPaging.lib.php
- *
- *      Autor           :               Marco A. Madue�o Mej�a <mmadueno@phperu.net>
- *
- *      Version         :               2.1
- *
- *      Descripcion     :               PHPPaging es una clase basada en PHP, y opcionalmente MySQL, que recibe
- *                                              una serie de datos y los procesa para as� lograr un paginado de �stos.
- *                                              Es altamente personalizable, y su configuraci�n no requiere de conocimientos
- *                                              avanzados sobre PHP.
- *
- *      URL                     :               http://phppaging.phperu.net
- *
- *      Documentacion:          http://phppaging.phperu.net/docs (phpDocumentor 1.3.2 <http://phpdoc.org/>)
- *
- *****************************************************************************************************
- *
- *     PHPPaging - Paginaci�n en PHP/MySQL
- *     Copyright (C) 2008  Marco A. Madue�o Mej�a
- *
- *     This program is free software: you can redistribute it and/or modify
- *     it under the terms of the GNU General Public License as published by
- *     the Free Software Foundation, either version 3 of the License, or
- *     (at your option) any later version.
- *
- *     This program is distributed in the hope that it will be useful,
- *     but WITHOUT ANY WARRANTY; without even the implied warranty of
- *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *     GNU General Public License for more details.
- *
- *     You should have received a copy of the GNU General Public License
- *     along with this program.  If not, see <http://www.gnu.org/licenses/>.
- *
- *
- *****************************************************************************************************
-*/
+
+
 
 class PHPPaging {
 
@@ -58,7 +19,8 @@ class PHPPaging {
         *       </code>
         *       @var int
         */
-        var $porPagina = 2;
+        var $porPagina = 8;
+
 
         /**
         *       N�mero de p�ginas anteriores a la actual a las que se mostrar� un link directo

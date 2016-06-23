@@ -18,15 +18,19 @@ $envio = $_POST ['envio'];
 $insert = mysql_query("INSERT INTO inventario2 VALUES ('',".$precio.", '".$vendedor."' , '".$codigo."', '".$producto."' , '".$ruta."', '".$descripcion."', ".$envio.")");
 
 if ($insert) {
-  echo "los datos se han almacenado en la base de datos";
+
+  echo "*** Felicidades Su Producto se Ha Publicado ***";
 }
 
 else
 {
-  echo"no inserto";
+  echo"Algo Hizo Mal Verifique";
 }
 
 ?>
 
 <br>
-<a href="index.php">ver la imagen</a>
+<a href="index.php">Regresar Al Catalogo</a>
+<br>
+</br>
+<a href="productos_insert.php">Seguir Vendiendo</a>
