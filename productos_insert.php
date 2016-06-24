@@ -35,7 +35,7 @@
 		<h1>Descripcion de la Pieza:	</h1><textarea cols="40" style="font-size:12px" rows="2" name="descripcion" type="text" class="text"></textarea>
 <br/>
 <br>
-			<h1>Número de Envioxsccs: <input name="envio" type="text" style="font-size:12px" class="text" value="" size="26" /></h1>
+			<h1>Número de Envio: <input name="envio" type="text" style="font-size:12px" class="text" value="" size="26" /></h1>
 <br>
 <br/>
 <h1>Categotía:</h1>
