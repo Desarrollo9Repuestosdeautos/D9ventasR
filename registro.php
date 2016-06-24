@@ -1,18 +1,11 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html PUBLIC>
+<html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>tienda de piezas</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/estilo.css" rel="stylesheet" type="text/css" />
+<title>Resgistro</title>
 
-
-
-<link rel="stylesheet" href="../D9ventasR/_assets/css/themes/default/jquery.mobile-1.4.5.min.css">
-<link rel="stylesheet" href="../D9ventasR/_assets/_assets/css/jqm-demos.css">
-<link rel="shortcut icon" href="../D9ventasR/_assets/favicon.ico">
-<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
-<script src="../D9ventasR/_assets/js/jquery.js"></script>
-<script src="../D9ventasR/_assets/_assets/js/index.js"></script>
-<script src="../D9ventasR/_assets/js/jquery.mobile-1.4.5.min.js"></script>
 </head>
 <body>
 
@@ -21,51 +14,47 @@
 				<br>
 				<br>
 
-
-
-
         <form action="index.html" method="post" style=" float:left;margin:-110px 500px 0px" data-role="controlgroup">
 
 						<div data-role="navbar">
     <ul>
-        <li><a class="ui-btn-active">Formulario de subcripcion</a></li>
+        <h4>Formulario de subcripción</h4>
+
+
     </ul>
 </div>
 
-					<p class="label3">Nombre: <input name="usuario" type="text" size="26" /></p>
+					<h1>Nombre: </h1><input name="usuario" type="text" style="font-size:14px" class="text" />
+					<br>
+					</br>
+							<h1>Apellido:</h1><input name="usuario" type="text" style="font-size:14px" class="text" />
+							<br>
+							</br>
+							<h1>Direccion: </h1><input name="usuario" type="text" style="font-size:14px" class="text" />
+							<br>
+							</br>
+						<h1>contraseña: </h1><input name="usuario" type="text" style="font-size:14px" class="text" />
+						<br>
+						</br>
+	           <h1>Cedula: </h1><input name="usuario" type="text" style="font-size:14px" class="text" />
+						 <br>
+						 </br>
+						<h1>Correo: </h1><input name="usuario" type="text" style="font-size:14px" class="text" />
+						<br>
+						</br>
+					<h1>Número de cuenta:</h1> <input name="usuario" type="text" style="font-size:12px" class="text" size="26"/>
+					<br>
+					</br>
+					<br>
+					</br>
+						<input type="submit" value="Guardar" id="boton" style="margin:10px 43px 0"/>
 
 
-
-							<p class="label3">Apellido: <input name="usuario" type="text" size="26" /></p>
-
-							<p class="label3">Direccion: <input name="usuario" type="text" size="26" /></p>
-
-						<p class="label3">contraseña: <input name="usuario" type="text" size="26" /></p>
-
-	           <p class="label3">Cedula: <input name="usuario" type="text" size="26" /></p>
-
-						<p class="label3">Correo: <input name="usuario" type="text" size="26" /></p>
-
-					<p class="label3">Número de Cuenta: <input name="usuario" type="text" size="26" /></p>
-
-
-
-            <br>
-						<input type="submit" value="Subsribirse" />
-
-    <br>
-    <br>
-    <br>
-    <br>
-     <br>
-      <br>
-      <br>
-      <br>
 
   </form>
 		<div id="headder" >
       <div>
-      <p class="pull-left" style=" float:left;margin:10px 500px 0">&copy; <?php echo date('Y') ?> - derechos reservados.</p>
+      <p id="" style=" float:left;margin:10px 500px 0">&copy; <?php echo date('Y') ?> - derechos reservados.</p>
       </div>
 
 

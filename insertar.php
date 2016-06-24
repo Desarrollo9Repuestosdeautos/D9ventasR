@@ -5,7 +5,7 @@ echo conectar();
 
 $precio = $_POST ['precio'];
 $vendedor = $_POST ['vendedor'];
-$codigo = $_POST ['codigo'];
+//$codigo = $_POST ['codigo'];
 $producto = $_POST ['producto'];
 $ruta="imagenes";//ruta carpeta donde queremos copiar las imágenes
 $archivo=$_FILES['fichero']['tmp_name'];
@@ -15,7 +15,7 @@ $ruta = $ruta ."/". $nombre;
 $descripcion = $_POST ['descripcion'];
 $envio = $_POST ['envio'];
 
-$insert = mysql_query("INSERT INTO inventario2 VALUES ('',".$precio.", '".$vendedor."' , '".$codigo."', '".$producto."' , '".$ruta."', '".$descripcion."', ".$envio.")");
+$insert = mysql_query("INSERT INTO inventario2 VALUES ('',".$precio.", '".$vendedor."' , '".$producto."' , '".$ruta."', '".$descripcion."', ".$envio.")");
 
 if ($insert) {
 
@@ -28,9 +28,22 @@ else
 }
 
 ?>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Insertar Productos</title>
+  </head>
+  <body>
 
-<br>
-<a href="index.php">Regresar Al Catalogo</a>
-<br>
-</br>
-<a href="productos_insert.php">Seguir Vendiendo</a>
+
+    <br>
+    </br>
+
+    <a href="productos_insert.php">Seguir Vendiendo</a>
+      <br>
+      </br>
+    <a href="index.php">Regresar Al Catálogo</a>
+
+  </body>
+</html>

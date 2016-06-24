@@ -10,22 +10,23 @@
 <script src="../D9ventasR/_assets/js/jquery.js"></script>
 <script src="../D9ventasR/_assets/_assets/js/index.js"></script>
 <script src="../D9ventasR/_assets/js/jquery.mobile-1.4.5.min.js"></script>
-</head>
+
 <title>Page Title</title>
 </head>
 <body>
 
-	<form>
+		<form data-role="controlgroup" action="insertar.php" method="post" style=" float:left;margin: -10px 400px 0px">
+		<div data-role="navbar">
+	    <ul>
+	        <li><a class="ui-btn-active">Login</a></li>
+	    </ul>
+	</div>
 
+						<p class="label3">Nombre: <input name="nombre" type="text"  value="" size="26"  /></p>
 
-<div id="login" >
-	<div id="loginheadRT" class="boxheadRT" style="margin: 10px 300px -15px;"><h1>Login</h1></div>
-	<div class="boxheadLT"></div>
-					<div class="boxmainRT" style="margin: -11px 300px 50px;">
-						<label for="text-basic">Nombre:</label>
-							<input type="text" name="text-basic" id="text-basic" value=""  autocomplete="off">
-						<label for="password">Contraseña:</label>
-<input type="password" name="password" id="password" value="" autocomplete="off">
+						<label >Contraseña:</label>
+							<p class="label3">Contraseña: <input name="password" for="password" id="password" type="text"  value="" size="26"  /></p>
+
 
 							<input type="button" data-inline="true" value="Entrar">
 
