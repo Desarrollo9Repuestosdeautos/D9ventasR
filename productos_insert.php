@@ -48,15 +48,14 @@
 		<option value="5">Embrague</option>
 		<option value="6">Parachoques</option>
 </select><br/>
-
 <br>
-					<input type="submit" id="boton" name="" value="guardar">
-
-
-
-
+<input type="submit" id="boton" name="" value="guardar">
 </table>
-
 </form>
+<div id="headder">
+	<div>
+	<p id="" style=" float:left;margin:1px 500px 0" >&copy; <?php echo date('Y') ?> - derechos reservados.</p>
+	</div>
+</div>
 	</body>
 </html>

@@ -123,7 +123,9 @@
 							echo "<tr>";
 							echo "<hide>";
 							echo "<td><img src = '$imagen' width ='160' height = '160'><td/>";
-
+							echo "<tr>";
+							echo "</tr>";
+							echo "<tr>";
 							echo "</table>";
 							echo "<p>"; echo "$precio" . "$". "&nbsp"; "</p>";
 							echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";

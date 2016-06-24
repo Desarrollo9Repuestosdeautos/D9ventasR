@@ -7,7 +7,7 @@
 <title>Resgistro</title>
 
 </head>
-<body>
+<body bgcolor="EAE1B7">
 
 				<br>
 				<br>
@@ -18,7 +18,7 @@
 
 						<div data-role="navbar">
     <ul>
-        <h4>Formulario de subcripción</h4>
+        <h4>Formulario de Subscripción</h4>
 
 
     </ul>
@@ -30,13 +30,13 @@
 							<h1>Apellido:</h1><input name="usuario" type="text" style="font-size:14px" class="text" />
 							<br>
 							</br>
-							<h1>Direccion: </h1><input name="usuario" type="text" style="font-size:14px" class="text" />
+							<h1>Dirección: </h1><input name="usuario" type="text" style="font-size:14px" class="text" />
 							<br>
 							</br>
 						<h1>contraseña: </h1><input name="usuario" type="text" style="font-size:14px" class="text" />
 						<br>
 						</br>
-	           <h1>Cedula: </h1><input name="usuario" type="text" style="font-size:14px" class="text" />
+	           <h1>Cédula: </h1><input name="usuario" type="text" style="font-size:14px" class="text" />
 						 <br>
 						 </br>
 						<h1>Correo: </h1><input name="usuario" type="text" style="font-size:14px" class="text" />
@@ -47,19 +47,21 @@
 					</br>
 					<br>
 					</br>
-						<input type="submit" value="Guardar" id="boton" style="margin:10px 43px 0"/>
+						<input type="submit" value="Guardar" id="boton" style="margin:10px 40px 0"/>
 
-
+						<br>
+						</br>
 
   </form>
 		<div id="headder" >
       <div>
-      <p id="" style=" float:left;margin:10px 500px 0">&copy; <?php echo date('Y') ?> - derechos reservados.</p>
+      <p id="" style=" float:left;margin:5px 500px 0">&copy; <?php echo date('Y') ?> - derechos reservados.</p>
       </div>
 
 
 </div>
 	</div>
 </div>
+
 </body>
 </html>
