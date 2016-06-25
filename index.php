@@ -38,7 +38,7 @@
 															 <link href="css/estilo.css" rel="stylesheet" type="text/css" />
 
 															 </head>
-															 <body>
+															 <body bgcolor="#F7F7F7">
 															 <!-- main -->
 															 <div id="main">
 															 <!-- Left side bar -->
@@ -213,7 +213,7 @@
 
 		<div id="headder">
       <div>
-      <p class="pull-left">&copy; <?php echo date('Y') ?> - derechos reservados.</p>
+      <p class="pull-left">&copy; <?php echo date('Y') ?>Copyright © 2016 TAU Corporation. All Rights Reserved.</p>
       </div>
 
 
