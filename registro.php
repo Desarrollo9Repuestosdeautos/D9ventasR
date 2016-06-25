@@ -14,7 +14,7 @@
 				<br>
 				<br>
 
-        <form action="index.html" method="post" style=" float:left;margin:-110px 500px 0px" data-role="controlgroup">
+        <form action="registro_usuario.php" method="post" style=" float:left;margin:-110px 500px 0px" data-role="controlgroup">
 
 						<div data-role="navbar">
     <ul>
@@ -27,22 +27,22 @@
 					<h1>Nombre: </h1><input name="usuario" type="text" style="font-size:14px" class="text" />
 					<br>
 					</br>
-							<h1>Apellido:</h1><input name="usuario" type="text" style="font-size:14px" class="text" />
+							<h1>Apellido:</h1><input name="apellido" type="text" style="font-size:14px" class="text" />
 							<br>
 							</br>
-							<h1>Dirección: </h1><input name="usuario" type="text" style="font-size:14px" class="text" />
+							<h1>Dirección: </h1><input name="direccion" type="text" style="font-size:14px" class="text" />
 							<br>
 							</br>
-						<h1>contraseña: </h1><input name="usuario" type="text" style="font-size:14px" class="text" />
+						<h1>contraseña: </h1><input name="contraseña" type="text" style="font-size:14px" class="text" />
 						<br>
 						</br>
-	           <h1>Cédula: </h1><input name="usuario" type="text" style="font-size:14px" class="text" />
+	           <h1>Cédula: </h1><input name="cedula" type="text" style="font-size:14px" class="text" />
 						 <br>
 						 </br>
-						<h1>Correo: </h1><input name="usuario" type="text" style="font-size:14px" class="text" />
+						<h1>E-mail: </h1><input name="postal" type="text" style="font-size:14px" class="text" />
 						<br>
 						</br>
-					<h1>Número de cuenta:</h1> <input name="usuario" type="text" style="font-size:12px" class="text" size="26"/>
+					<h1>Número de cuenta:</h1> <input name="cuenta" type="text" style="font-size:12px" class="text" size="26"/>
 					<br>
 					</br>
 					<br>

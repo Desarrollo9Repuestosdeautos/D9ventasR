@@ -1,3 +1,14 @@
+
+<?php
+session_start();
+include 'db.php';
+echo conectar();
+
+if(isset($_SESSION['usuario'])) {?>
+
+
+
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -76,3 +87,11 @@
 </div>
 	</body>
 </html>
+
+
+<?php
+}else{
+	echo '<script> alert("para realizar esta acccion debe registrarse en el sistema.");</script>';
+	echo '<script> window.location="registro.php"; </script>';
+}
+?>
