@@ -1,6 +1,6 @@
 
 
-			<?php // AUTHOR: webreunidos.es  // Primero definimos la conexión a la base de datos
+			<?php
 			error_reporting(0);
 			// Definimos la conexión
 			include'db.php';
@@ -8,21 +8,48 @@
 			$sql = "SELECT * FROM inventario2";
 					$texto = ''; //Variable que contendrá el resultado de la búsqueda
 					$registros = ''; //Variable que contendrá el número de resgistros encontrados
+
 					if($_POST){  $busqueda = trim($_POST['buscar']);
 						 $entero = 0;  if (empty($busqueda)){ $texto = 'Búsqueda sin resultados'; }
 						 else{ // Si hay información para buscar, abrimos la conexión
-							 conectar(); mysql_set_charset('utf8'); // para indicar a la bbdd que vamos a mostrar la info en utf
+							 conectar(); mysql_set_charset('utf8');
+
+               // para indicar a la bbdd que vamos a mostrar la info en utf
 							 //Contulta para la base de datos, se utiliza un comparador LIKE para acceder a todo lo que contenga la cadena a buscar
-							 $sql = "SELECT * FROM inventario2 WHERE nombre_producto LIKE '%" .$busqueda. "%' ORDER BY ID";
+							$sql = "SELECT * FROM inventario2 WHERE nombre_producto LIKE '%" .$busqueda. "%' ORDER BY ID";
+              // $sql = "SELECT * FROM inventario2 WHERE precio LIKE '%" .$busqueda. "%' ORDER BY ID";
 								 $resultado = mysql_query($sql);
 							 //Ejecución de la consulta //Si hay resultados...
 							 if (mysql_num_rows($resultado) > 0){  // Se recoge el número de resultados
 								 $registros = '<p>' . mysql_num_rows($resultado) . ' registros encontrados</p>';
-									// Se almacenan las cadenas de resultado
+					 				// Se almacenan las cadenas de resultado
 									while($fila = mysql_fetch_assoc($resultado)){  $texto .= $fila['null'] . '<br />'; }
 								}else{ $texto = "NO HAY RESULTADOS EN LA BBDD";	 } }}
 								 // Después de trabajar con la bbdd, cerramos la conexión (por seguridad, no hay que dejar conexiones abiertas)
-			mysql_close($conexion);
+			mysql_close($conexion);?>
+      <?php
+      $textos = ''; //Variable que contendrá el resultado de la búsqueda
+      $registro = ''; //Variable que contendrá el número de resgistros encontrados
+
+
+      if($_POST){  $busquedas = trim($_POST['busca']);
+         $entero = 0;  if (empty($busquedas)){ $textos = 'Búsqueda sin resultados'; }
+         else{ // Si hay información para buscar, abrimos la conexión
+           conectar(); mysql_set_charset('utf8');
+
+           // para indicar a la bbdd que vamos a mostrar la info en utf
+           //Contulta para la base de datos, se utiliza un comparador LIKE para acceder a todo lo que contenga la cadena a buscar
+          $sql = "SELECT * FROM inventario2 WHERE categoria LIKE '%" .$busquedas. "%' ORDER BY ID";
+          // $sql = "SELECT * FROM inventario2 WHERE precio LIKE '%" .$busqueda. "%' ORDER BY ID";
+             $resultad = mysql_query($sql);
+           //Ejecución de la consulta //Si hay resultados...
+           if (mysql_num_rows($resultad) > 0){  // Se recoge el número de resultados
+             $registros = '<p>' . mysql_num_rows($resultad) . ' registros encontrados</p>';
+              // Se almacenan las cadenas de resultado
+              while($filas = mysql_fetch_assoc($resultad)){  $textos .= $filas['null'] . '<br />'; }
+            }else{ $textos = "NO HAY RESULTADOS EN LA BBDD";	 } }}
+             // Después de trabajar con la bbdd, cerramos la conexión (por seguridad, no hay que dejar conexiones abiertas)
+  mysql_close($conexion);
 
 
 															 // Se muestran los resultados de la consulta, número de registros y contenido.
@@ -46,13 +73,13 @@
 															 		<div id="logo"></div>
 															 <!-- Quick Search -->
 															 			<div id="quicksearch">
-															 				<div id="quickheadRT" class="boxheadRT"><h1>Búsqueda detallada</h1></div>
+															 				<div id="quickheadRT" class="boxheadRT"><h1>Búsqueda General</h1></div>
 															 				<div class="boxheadLT"></div>
 															 					<div class="boxmain">
 															 						<div class="boxmainRT" style="width:144px">
 															 							<br>
 															 							<form id="buscador" name="buscador" method="post" action="<?php echo $_SERVER['PHP_SELF']?>">
-															 							<input  id="buscar" name="buscar" type="search" placeholder="Buscar aquí..." autofocus >
+															 							<input  id="buscar" name="buscar" type="search" placeholder="Buscar en todo..." autofocus >
 															 						</br>
 																					<br>
 																					<?php echo $registros ?>
@@ -71,13 +98,37 @@
 															       <br>
 															 <!-- Categories --><div class="inner_copy"></div>
 															 			<div id="categories">
-															 				<div id="categorieheadRT" class="boxheadRT"><h1>buscar por Categories</h1></div>
+															 				<div id="categorieheadRT" class="boxheadRT"><h1>Filtrar Categorías</h1></div>
 															 		 		<div class="boxheadLT"></div>
 															 					<div class="boxmain">
 															 						<div class="boxmainRT" style="width: 144px;">
 															 							<ul>
-															 											<li><a href="#">marca</a></li>
-															 											<li><a href="#">articulo</a></li>
+                                              <br/>
+
+                                              <h1>Categoría:</h1>
+                                              <br/>
+                                              <form id="buscado" name="buscado" method="post" action="<?php echo $_SERVER['PHP_SELF']?>">
+                                              <select id="busca" name="busca" style="width: 108px;">
+                                                <option value="0">--Selecciona--</option>
+                                                <option value="1">Compatible con la inspeccion de automoviles</option>
+                                                <option value="2">T/M×Tren de engranajes</option>
+                                                <option value="3">Repuestos con referencia de Direccion</option>
+                                                <option value="4">Acondicionador de aire y calefaccion</option>
+                                                <option value="5">Accesorio interior</option>
+                                                <option value="6">Extremo delantero</option>
+                                                <option value="7">Parte trasera final</option>
+                                                <option value="8">Repuestos con referencia de Motor</option>
+                                                <option value="9">Repuestos con referencia de Suspension</option>
+                                                <option value="10">Repuestos con referencia de Frenos</option>
+                                                <option value="11">Audio</option>
+                                                <option value="12">Componente electrico</option>
+                                                <option value="13">Audio</option>
+                                                <option value="14">Parte lateral</option>
+                                                <option value="15">Parte de vidrio</option>
+
+
+                                              </select><br></br><input type="submit" name="buscado" class="boton peque aceptar" value="mostrar"><br/>
+                                              <br>
 
 															 									</ul>
 															 								</div>
@@ -158,13 +209,12 @@
 							echo "<tr>";
 							echo "<tr>";
 							echo "</table>";
-							echo "<p>"; echo "$precio" . "$". "&nbsp"; "</p>";
+							echo "<p>"; echo "B/.". "$precio" . "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>";
 							echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
-							echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
-							echo "<br>";
-
             	echo '<form class="" action="descripcion.php" method="post">';
 							echo "<input type= 'hidden' name='ID' value='$ID'>";
+							echo "<br/>";
+							echo "&nbsp;&nbsp;&nbsp;";
 							echo ' <input type="submit" name="name" value="detalle" ';
 							echo "</hide>";
 							echo "</div>";

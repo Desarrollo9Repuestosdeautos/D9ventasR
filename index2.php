@@ -73,7 +73,7 @@
 															 		<div id="logo"></div>
 															 <!-- Quick Search -->
 															 			<div id="quicksearch">
-															 				<div id="quickheadRT" class="boxheadRT"><h1>Búsqueda detallada</h1></div>
+															 				<div id="quickheadRT" class="boxheadRT"><h1>Búsqueda General</h1></div>
 															 				<div class="boxheadLT"></div>
 															 					<div class="boxmain">
 															 						<div class="boxmainRT" style="width:144px">
@@ -98,16 +98,18 @@
 															       <br>
 															 <!-- Categories --><div class="inner_copy"></div>
 															 			<div id="categories">
-															 				<div id="categorieheadRT" class="boxheadRT"><h1>buscar por Categories</h1></div>
+															 				<div id="categorieheadRT" class="boxheadRT"><h1>Filtrar Categorías</h1></div>
 															 		 		<div class="boxheadLT"></div>
 															 					<div class="boxmain">
 															 						<div class="boxmainRT" style="width: 144px;">
 															 							<ul>
                                               <br/>
-                                              <h1>Categotía:</h1>
+
+                                              <h1>Categoría:</h1>
+                                              <br/>
                                               <form id="buscado" name="buscado" method="post" action="<?php echo $_SERVER['PHP_SELF']?>">
-                                              <select id="busca" name="busca">
-                                                <option value="0">--</option>
+                                              <select id="busca" name="busca" style="width: 108px;">
+                                                <option value="0">--Selecciona--</option>
                                                 <option value="1">Compatible con la inspeccion de automoviles</option>
                                                 <option value="2">T/M×Tren de engranajes</option>
                                                 <option value="3">Repuestos con referencia de Direccion</option>
@@ -123,8 +125,9 @@
                                                 <option value="13">Audio</option>
                                                 <option value="14">Parte lateral</option>
                                                 <option value="15">Parte de vidrio</option>
-                                                  <input type="submit" name="buscado" class="boton peque aceptar" value="buscar">
-                                              </select><br/>
+
+
+                                              </select><br></br><input type="submit" name="buscado" class="boton peque aceptar" value="mostrar"><br/>
                                               <br>
 
 															 									</ul>
