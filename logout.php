@@ -12,6 +12,6 @@ echo '<script> window.location="index2.php"; </script>';
 
   </head>
   <body>
-    <script language="javascript">location.href = "index2.php";</script>
+    <script language="javascript">location.href = "index.php";</script>
   </body>
 </html>

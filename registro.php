@@ -33,7 +33,7 @@
 							<h1>Dirección: </h1><input name="direccion" type="text" style="font-size:14px" class="text" />
 							<br>
 							</br>
-						<h1>contraseña: </h1><input name="contraseña" type="text" style="font-size:14px" class="text" />
+						<h1>contraseña: </h1><input name="contraseña" type="password" style="font-size:14px" class="text" />
 						<br>
 						</br>
 	           <h1>Cédula: </h1><input name="cedula" type="text" style="font-size:14px" class="text" />

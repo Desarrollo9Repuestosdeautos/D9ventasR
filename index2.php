@@ -153,7 +153,7 @@ session_start();
 															 			<div id="navbar">
 															 				<ul>
 															 					<li><a href="index2.php">inicio</a></li><li><span></span></li>
-															 					<li><a href="politicas.php">condiciones y uso</a></li><li><span></span></li>
+															 					<li><a href="#">condiciones y uso</a></li><li><span></span></li>
 															 					<li><a href="registro.php">registro</a></li><li><span></span></li>
 															 					<li><a href="productos_insert.php" >Vender</a></li><li><span></span></li>
 															 					<li><a href="login2.php" class="divider">Login</a></li>
@@ -231,12 +231,13 @@ session_start();
 							echo "<tr>";
 							echo "<tr>";
 							echo "</table>";
-							echo "<p>"; echo "$precio" . "$". "&nbsp"; "</p>";
+							echo "<p>"; echo "B/."."$precio" . "$". "&nbsp"; "</p>";
 							echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
 							echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
-							echo "<br>";
+							echo "<br/>";
 
             	echo '<form class="" action="descripcion.php" method="post">';
+							echo "<br/>";
 							echo "<input type= 'hidden' name='ID' value='$ID'>";
 							echo ' <input type="submit" name="name" value="detalle" ';
 							echo "</hide>";

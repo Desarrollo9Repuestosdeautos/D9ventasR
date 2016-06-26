@@ -1,4 +1,7 @@
+<?php
+session_start();
 
+?>
 
 			<?php
 			error_reporting(0);
@@ -149,11 +152,11 @@
 
 															 			<div id="navbar">
 															 				<ul>
-															 					<li><a href="index.php">inicio</a></li><li><span></span></li>
-															 					<li><a href="politicas.php">condiciones y uso</a></li><li><span></span></li>
+															 					<li><a href="index2.php">inicio</a></li><li><span></span></li>
+															 					<li><a href="#">condiciones y uso</a></li><li><span></span></li>
 															 					<li><a href="registro.php">registro</a></li><li><span></span></li>
 															 					<li><a href="productos_insert.php" >Vender</a></li><li><span></span></li>
-															 					<li><a href="login.html" class="divider">Login</a></li>
+															 					<li><a href="login2.php" class="divider">Login</a></li>
 															 				</ul>
 
 															         <br>
@@ -168,8 +171,27 @@
 
 															 				</div>
 															 				<div class=" clear"></div>
-															         <br>
-															         <br>
+																			<?php echo "<p ALIGN = right style='color:blue;'>"; ?>
+          <?php
+
+        if(isset($_SESSION['usuario']))
+        {
+
+          echo "usuario:". $_SESSION ['usuario'] ;
+          echo "<br>";
+          echo "<p ALIGN = right  style='color:blue;'>";
+          echo "<a href='logout.php'>salir</a>";
+          echo "</p>";
+
+        }
+
+         ?>
+				<?php echo "</p>"; ?>
+
+
+																			 <?php echo "<P ALIGN=right>"; ?>
+																			 <?php echo "" ?>
+																			 <?php echo "</p>"; ?>
 															 		<fieldset>
 															 			<legend>catalogo de articulos</legend>
 
@@ -209,12 +231,14 @@
 							echo "<tr>";
 							echo "<tr>";
 							echo "</table>";
-							echo "<p>"; echo "B/.". "$precio" . "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>";
+							echo "<p>"; echo "B/."."$precio" . "$". "&nbsp"; "</p>";
 							echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
-            	echo '<form class="" action="descripcion.php" method="post">';
-							echo "<input type= 'hidden' name='ID' value='$ID'>";
+							echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
 							echo "<br/>";
-							echo "&nbsp;&nbsp;&nbsp;";
+
+            	echo '<form class="" action="descripcion.php" method="post">';
+							echo "<br/>";
+							echo "<input type= 'hidden' name='ID' value='$ID'>";
 							echo ' <input type="submit" name="name" value="detalle" ';
 							echo "</hide>";
 							echo "</div>";
