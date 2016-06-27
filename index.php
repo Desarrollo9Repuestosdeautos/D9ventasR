@@ -51,7 +51,7 @@ session_start();
               // Se almacenan las cadenas de resultado
               while($filas = mysql_fetch_assoc($resultad)){  $textos .= $filas['null'] . '<br />'; }
             }else{ $textos = "NO HAY RESULTADOS EN LA BBDD";	 } }}
-             // Después de trabajar con la bbdd, cerramos la conexión 
+             // Después de trabajar con la bbdd, cerramos la conexión (por seguridad, no hay que dejar conexiones abiertas)
   mysql_close($conexion);
 
 
@@ -231,12 +231,13 @@ session_start();
 							echo "<tr>";
 							echo "<tr>";
 							echo "</table>";
-							echo "<p>"; echo "B/."."$precio" . "$". "&nbsp"; "</p>";
+							echo "<p>"; echo "B/."."$precio" . "&nbsp"; "</p>";
 							echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
 							echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
 							echo "<br/>";
-
+							echo "<br/>";
             	echo '<form class="" action="descripcion.php" method="post">';
+							echo "<br/>";
 							echo "<br/>";
 							echo "<input type= 'hidden' name='ID' value='$ID'>";
 							echo ' <input type="submit" name="name" value="detalle" ';
