@@ -93,7 +93,7 @@ echo "</center>";
 
 }
 echo "<center>";
-echo '<a href="carritoCompra/catalogo.php">Comprar</a>';
+echo '<a href="catalogo.php">Comprar</a>';
 //echo ' <input type="submit" name="name" value="comprar">';
 echo "</center>";
 
@@ -109,7 +109,7 @@ echo "</center>";
    <br>
      <br>
 
- <div id="headder">
+ <div id="headder" >
    <div>
    <p class="pull-left">&copy; <?php echo date('Y') ?>Copyright © 2016 TAU Corporation. All Rights Reserved.</p>
    </div>

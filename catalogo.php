@@ -40,7 +40,7 @@ $qry = mysql_query("select * from inventario2 order by ID asc");
                 <td width="25" align="right"><a href="vercarrito.php?<?php echo SID ?>" title="Ver el contenido del carrito">
                         <img src="images/vercarrito.gif" width="25" height="21" border="0"></a></td>
                         <br>
-                        <img src="images/amazon_argentina.png">
+                        <img src="img/logoR.jpg">
             </tr>
             </form>
 

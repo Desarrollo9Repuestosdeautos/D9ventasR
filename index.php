@@ -51,7 +51,7 @@ session_start();
               // Se almacenan las cadenas de resultado
               while($filas = mysql_fetch_assoc($resultad)){  $textos .= $filas['null'] . '<br />'; }
             }else{ $textos = "NO HAY RESULTADOS EN LA BBDD";	 } }}
-             // Después de trabajar con la bbdd, cerramos la conexión (por seguridad, no hay que dejar conexiones abiertas)
+             // Después de trabajar con la bbdd, cerramos la conexión 
   mysql_close($conexion);
 
 
@@ -107,7 +107,7 @@ session_start();
 															 						<div class="boxmainRT" style="width: 144px;">
 															 							<ul>
                                               <br/>
-
+																								<!--método categoria en el cual se selecciona y se ordena por categoria -->
                                               <h1>Categoría:</h1>
                                               <br/>
                                               <form id="buscado" name="buscado" method="post" action="<?php echo $_SERVER['PHP_SELF']?>">
