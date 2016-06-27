@@ -5,14 +5,14 @@ session_start();
 //conectar a la base de
 //datos
 mysql_connect("localhost", "root", "");
-mysql_select_db("paypal");
+mysql_select_db("proyecto");
 
 if (isset($_SESSION['carro']))
     $carro = $_SESSION['carro'];
 else
     $carro = false;
 
-$qry = mysql_query("select * from catalogo order by producto asc");
+$qry = mysql_query("select * from inventario2 order by ID asc");
 ?>
 <html>
     <head>
@@ -31,7 +31,7 @@ $qry = mysql_query("select * from catalogo order by producto asc");
     </head>
 
 
-    
+
     <form align="center">
         <table width="472" align="center"cellpadding="2" cellspacing="0" style="border: 2px solid #000000;">
             <tr valign="middle" bordercolor="#FFFFFF" bgcolor="#DFDFDF" class="catalogo">
@@ -43,23 +43,24 @@ $qry = mysql_query("select * from catalogo order by producto asc");
                         <img src="images/amazon_argentina.png">
             </tr>
             </form>
-            <?php
 
+            <?php
+echo '<a href="index.php">Volver al Catálogo</a>';
             while ($row = mysql_fetch_assoc($qry)) {
                 ?>
                 <tr valign="middle" class="catalogo">
-                    <td><?php echo $row['producto'] ?></td>
+                    <td><?php echo $row['nombre_producto'] ?></td>
                     <td><?php echo $row['precio'] ?></td>
                     <td align="center">
                         <?php
-                        if (!$carro || !isset($carro[md5($row['id'])]['identificador']) || $carro[md5($row['id'])]['identificador'] != md5($row['id'])) {
+                        if (!$carro || !isset($carro[md5($row['ID'])]['identificador']) || $carro[md5($row['ID'])]['identificador'] != md5($row['ID'])) {
 
                             ?>
-                            <a href="agregacar.php?<?php echo SID ?>&id=<?php echo $row['id']; ?>">
+                            <a href="agregacar.php?<?php echo SID ?>&id=<?php echo $row['ID']; ?>">
                                 <img src="images/productonoagregado.gif" border="0" title="Agregar al Carrito"></a><?php
                         } else {
 
-                            ?><a href="borracar.php?<?php echo SID ?>&id=<?php echo $row['id']; ?>">
+                            ?><a href="borracar.php?<?php echo SID ?>&id=<?php echo $row['ID']; ?>">
                                 <img src="images/productoagregado.gif" border="0" title="Quitar del Carrito"></a><?php } ?></td>
                 </tr><?php } ?>
         </table>

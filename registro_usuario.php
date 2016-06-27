@@ -14,10 +14,10 @@ $cuenta = $_POST ['cuenta'];
 
 
 
-$insert = mysql_query("INSERT INTO registro_usuario VALUES ('".$nombre."', '".$apellido."' , '".$direccion."', md5('".$contraseña."') , '".$cedula."', '".$correo."', ".$cuenta.")");
+$insert = mysql_query("INSERT INTO registro_usuario VALUES ('','".$nombre."', '".$apellido."' , '".$direccion."', md5('".$contraseña."') , '".$cedula."', '".$correo."', ".$cuenta.")");
 
 if ($insert) {
-  echo "los datos se han almacenado en la base de datos";
+  echo "*** Gracias Por Subscribirte ***";
   echo "<br>";
 
 }

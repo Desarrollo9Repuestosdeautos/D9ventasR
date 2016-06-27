@@ -43,7 +43,7 @@ $products2 = substr($products2, 0, (strlen($products2) - 2));
         <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" name="f1" id="f1" method="post">
             <fieldset>
                 <legend class="prod">
-                    <strong>Finalizar la Compra</strong> 
+                    <strong>Finalizar la Compra</strong>
                 </legend>
 
                 <input type="hidden" name="shipping" value="0">
@@ -67,7 +67,7 @@ $products2 = substr($products2, 0, (strlen($products2) - 2));
 
                 <input type="hidden" name="image_url" value="">
 
-                <input type="hidden" name="return" value="http://localhost:8080/dashboard/carritoCompra/ipn_success.php">
+                <input type="hidden" name="return" value="http://localhost:8080/D9ventasR/carritoCompra/ipn_success.php">
 
                 <input type="hidden" name="cancel_return" value="http://localhost:8080/dashboard/carritoCompra/ipn_error.php">
 

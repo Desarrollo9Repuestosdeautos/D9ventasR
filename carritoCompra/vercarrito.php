@@ -55,8 +55,8 @@ $carro = $_SESSION['carro'];
                             <td width="43" align="center"><?php echo $v['cantidad'] ?></td>
                             <td width="136" align="center">
                                 <input name="cantidad" type="text" id="cantidad" value="<?php echo $v['cantidad'] ?>" size="8">
-                                <input name="id" type="hidden" id="id" value="<?php echo $v['id'] ?>"> </td>
-                            <td align="center"><a href="borracar.php?<?php echo SID ?>&id=<?php echo $v['id'] ?>"><img src="images/trash.gif" width="12" height="14" border="0"></a></td>
+                                <input name="id" type="hidden" id="id" value="<?php echo $v['ID'] ?>"> </td>
+                            <td align="center"><a href="borracar.php?<?php echo SID ?>&id=<?php echo $v['ID'] ?>"><img src="images/trash.gif" width="12" height="14" border="0"></a></td>
                             <td align="center">
                                 <input name="imageField" type="image" src="images/actualizar.gif" width="20" height="20" border="0"></td>
                         </tr></form>
@@ -75,4 +75,4 @@ $carro = $_SESSION['carro'];
                 <?php } ?>
         </p>
     </body>
-</html> 
+</html>

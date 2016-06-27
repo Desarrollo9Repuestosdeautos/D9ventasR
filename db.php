@@ -8,10 +8,7 @@ function conectar()
   $db = mysql_select_db("proyecto",$link) or die ("no existe la base de datos");
 
   }
-function desconectar()
-{
-global $conexion; mysql_close($conexion);
-}
+
 
 
  ?>

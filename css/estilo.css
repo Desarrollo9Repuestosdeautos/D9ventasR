@@ -12,3 +12,182 @@ p
  margin-top:30 px;
 
 }
+
+
+
+/*body {background-color: #ccc; padding: 0;}
+#xptSandboxHead {background-color: #ccc; padding: 10px 0px 10px 0px; text-align: right; height: 50px; color: #fff;}
+#xptSandboxHead	IMG {float:left;}
+#xptSandboxBody {background-color: #ccc; margin: 0px 0px 0px 0px;width:760px;}
+#xptSandbox {background-color: #fff; border-color: #036; border-style: solid; border-width: 10px;}
+#sandbox_redirect {background-color: #fff;}
+*/
+/* PPSCR00367196 - Emanuele F */
+/*body.xptSandbox {background-color: #fff; border-color: #036; border-style: solid; border-width: 10px;}*/
+
+
+body
+{
+	/*background-color: #efefef !important;*/
+	color: #333;
+	border:20px #efefef solid;
+	border-top:0;
+	border-bottom:0;
+	/*font: normal .7em Verdana;*/
+	margin:0;
+}
+#xptSandbox{
+/*background: #fff url("../../../en_US/i/IntegrationCenter/scr/src_ic_bg_gradient.jpg") center center repeat-y;
+text-align:center !important  ;*/
+padding:0 !important;
+}
+#xptSandboxHead
+{
+	background: url("../../../en_US/i/IntegrationCenter/scr/src_ic_header_gradient.jpg") ;
+	overflow: auto;
+	padding: 18px 10px 21px 0;
+	margin:0;
+	height:39px;
+	/*width: 760px;*/
+	text-align:right;
+}
+#xptSandboxHead img
+{
+	float: left;
+	padding-left: 20px;
+}
+
+#xptContentOuter,  #header
+{
+	/*width: 785px !important;*/
+}
+#navSecondary{
+/*width: 770px !important;*/
+}
+/* FOOTER AREA */
+
+#sandboxFooter
+{
+	clear: both;
+	overflow: auto;
+	/*padding: 0 17px 50px;*/
+	padding: 0 0 50px;
+
+}
+
+/* BLUE NAVIGATION BAR WITHIN THE FOOTER AREA */
+#sandboxFooter .nav-footer
+{
+	/*background:  #369 url("../../../en_US/i/IntegrationCenter/scr/o.gif") no-repeat -1px left;
+	height: 100%;
+	margin: 20px 0 0;
+	overflow: auto;
+	padding: 0;
+	background-color:#336699;
+	height:35px;*/
+	background: transparent url(../../../en_US/i/IntegrationCenter/scr/src_ic_header_gradient.jpg) repeat scroll 0 0;
+	height: 2px;
+	overflow: scroll;
+}
+#sandboxFooter .nav-footer .left_corner
+{
+	float:left; position:relative;
+}
+#sandboxFooter .nav-footer .right_corner
+{
+	float:right;
+}
+#sandboxFooter .nav-footer ul
+{
+	/*float: left;
+	margin: 5px 0 0;
+	padding: 5px 0 5px 5px;*/
+	margin: 0;
+	padding:0;
+}
+#sandboxFooter .nav-footer ul li
+{
+	/*border-left: 1px solid #e4edf6;
+	display: inline;
+	list-style-type: none;
+	padding: 0 5px;*/
+	margin: 0;
+	border-left: 1px solid #e4edf6;
+	padding:0 5px;
+	margin:9px 0;
+	list-style-type: none;
+	display:inline;
+	float:left;
+	color:#FFFFFF;
+}
+#sandboxFooter .nav-footer li.first
+{
+	border-left: 0;
+}
+#sandboxFooter .nav-footer a
+{
+	color: #fff;
+	text-decoration: none;
+}
+#sandboxFooter .nav-footer a:hover{
+	text-decoration: underline;
+}
+#sandboxFooter p.company
+{
+	color: #fff;
+	position: absolute;
+	right:0;
+	margin:9px 50px;
+}
+#sandboxFooter div.copyright
+{
+	clear: left;
+	float: left;
+	font-size: 90%;
+	width: 400px;
+	padding-left:10px;
+	margin-top:10px;
+}
+#sandboxFooter div.copyright p{
+	margin:0 0 10px 0;
+}
+
+/* TRUST-e AND BBB ONLINE LOGO WITHIN THE FOOTER AREA */
+#sandboxFooter div.logo-partner
+{
+	clear: right;
+	float: right;
+	padding-top: 10px;
+	width: 250px;
+	padding-right:5px;
+}
+#sandboxFooter div.logo-partner img
+{
+	padding:3px;
+}
+#testsite
+{
+	width: 100%;
+	text-align: left;
+	overflow: hidden;
+}
+#testsite h1
+{
+	font-family:Verdana;
+	color:#333333;
+	font-size:130%;
+	padding: 0 0 10px 15px;
+	margin:10px 0 0 0;
+	width:100%;
+	/*background: url(../../../en_US/i/IntegrationCenter/scr/src_ic_dotline.gif) repeat-x 0 19px;*/
+}
+#sandbox_redirect{
+        border-top: 2px solid #cccccc;
+	border-bottom: 2px solid #cccccc;
+}
+#footerSandbox {
+	width:100%;
+	position:relative;
+	left:-18px;
+}
+p { margin:1em 0pt; }

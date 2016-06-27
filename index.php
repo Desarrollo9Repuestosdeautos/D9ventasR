@@ -13,7 +13,7 @@ session_start();
 					$registros = ''; //Variable que contendrá el número de resgistros encontrados
 
 					if($_POST){  $busqueda = trim($_POST['buscar']);
-						 $entero = 0;  if (empty($busqueda)){ $texto = 'Búsqueda sin resultados'; }
+						 $entero = 0;  if (empty($busqueda)){ $texto = ''; }
 						 else{ // Si hay información para buscar, abrimos la conexión
 							 conectar(); mysql_set_charset('utf8');
 
@@ -27,7 +27,7 @@ session_start();
 								 $registros = '<p>' . mysql_num_rows($resultado) . ' registros encontrados</p>';
 					 				// Se almacenan las cadenas de resultado
 									while($fila = mysql_fetch_assoc($resultado)){  $texto .= $fila['null'] . '<br />'; }
-								}else{ $texto = "NO HAY RESULTADOS EN LA BBDD";	 } }}
+								}else{ $texto = "NO HAY RESULTADOS EN SU BUSQUEDA";	 } }}
 								 // Después de trabajar con la bbdd, cerramos la conexión (por seguridad, no hay que dejar conexiones abiertas)
 			mysql_close($conexion);?>
       <?php
@@ -152,7 +152,7 @@ session_start();
 
 															 			<div id="navbar">
 															 				<ul>
-															 					<li><a href="index2.php">inicio</a></li><li><span></span></li>
+															 					<li><a href="index.php">inicio</a></li><li><span></span></li>
 															 					<li><a href="#">condiciones y uso</a></li><li><span></span></li>
 															 					<li><a href="registro.php">registro</a></li><li><span></span></li>
 															 					<li><a href="productos_insert.php" >Vender</a></li><li><span></span></li>
