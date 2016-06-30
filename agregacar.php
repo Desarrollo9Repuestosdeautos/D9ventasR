@@ -21,5 +21,5 @@ $carro[md5($id)]=array('identificador'=>md5($id),
 
 $_SESSION['carro']=$carro;
 
-header("Location:catalogo.php?".SID);
+header("Location:index.php?".SID);
 ?>

@@ -63,11 +63,12 @@ session_start();
 															 <html >
 															 <head>
 															 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-															 <title>tienda de piezas</title>
+															 <title>Tienda de piezas</title>
 															 <link href="css/style.css" rel="stylesheet" type="text/css" />
 															 <link href="css/estilo.css" rel="stylesheet" type="text/css" />
 
 															 </head>
+
 															 <body bgcolor="#F7F7F7">
 															 <!-- main -->
 															 <div id="main">
@@ -75,6 +76,10 @@ session_start();
 															 	<div id="LTsidebar">
 															 		<div id="logo"></div>
 															 <!-- Quick Search -->
+
+
+
+
 															 			<div id="quicksearch">
 															 				<div id="quickheadRT" class="boxheadRT"><h1>Búsqueda General</h1></div>
 															 				<div class="boxheadLT"></div>
@@ -99,6 +104,7 @@ session_start();
 															 			<div class="clear"></div>
 															       <br>
 															       <br>
+
 															 <!-- Categories --><div class="inner_copy"></div>
 															 			<div id="categories">
 															 				<div id="categorieheadRT" class="boxheadRT"><h1>Filtrar Categorías</h1></div>
@@ -107,6 +113,7 @@ session_start();
 															 						<div class="boxmainRT" style="width: 144px;">
 															 							<ul>
                                               <br/>
+
 																								<!--método categoria en el cual se selecciona y se ordena por categoria -->
                                               <h1>Categoría:</h1>
                                               <br/>
@@ -142,7 +149,6 @@ session_start();
 															 				</div>
 															 		</div>
 
-
 															 <!-- Right sidebar -->
 															 		<div id="RTsidebar">
 															 			<div id="headder"><p class="label"> <?php include 'fechas.php';
@@ -152,33 +158,50 @@ session_start();
 
 															 			<div id="navbar">
 															 				<ul>
-															 					<li><a href="index.php">inicio</a></li><li><span></span></li>
-															 					<li><a href="#">condiciones y uso</a></li><li><span></span></li>
-															 					<li><a href="registro.php">registro</a></li><li><span></span></li>
-															 					<li><a href="productos_insert.php" >Vender</a></li><li><span></span></li>
-															 					<li><a href="login2.php" class="divider">Login</a></li>
+															 					<li><a href="index.php">Start</a></li><li><span></span></li>
+															 				<li><a href="#">About</a></li><li><span></span></li>
+															 					<li><a href="registro.php">Sign in</a></li><li><span></span></li>
+															 					<li><a href="productos_insert.php" >Sale</a></li><li><span></span></li>
+															 					<li><a href="login2.php">Login</a></li><li><span></span></span></li></li>
+																				<li><a href="vercarrito.php?" class="divider">Ver Carrito</a></li>
+
+
 															 				</ul>
 
+
+																			<div class=" clear"></div>
 															         <br>
+
 															         <br>
 															         <form action = "center">
 															         </div>
 
 
+
+
 															         </form>
+
 															 				<div id="add">
 
 
 															 				</div>
+																			</br>
+
+																			 </br>
 															 				<div class=" clear"></div>
+
 																			<?php echo "<p ALIGN = right style='color:blue;'>"; ?>
-          <?php
+
+
+					<?php
 
         if(isset($_SESSION['usuario']))
         {
 
           echo "usuario:". $_SESSION ['usuario'] ;
-          echo "<br>";
+					echo "<br>";
+					echo '<input name="imageField" type="image" src="images/user.png"  width="30" height="30" border="0">';
+					echo "<br>";
           echo "<p ALIGN = right  style='color:blue;'>";
           echo "<a href='logout.php'>salir</a>";
           echo "</p>";
@@ -186,6 +209,7 @@ session_start();
         }
 
          ?>
+
 				<?php echo "</p>"; ?>
 
 
@@ -193,7 +217,10 @@ session_start();
 																			 <?php echo "" ?>
 																			 <?php echo "</p>"; ?>
 															 		<fieldset>
+
 															 			<legend>catalogo de articulos</legend>
+
+
 
 											<?php  			// codigo php para generar catalogo de productos
 														 include 'PHPPaging.lib.php';
@@ -293,6 +320,9 @@ session_start();
 
 
 </div>
+<h1>Ver Carrito</h1>
+ <input name="imageField" type="image" src="images/vercarrito.gif"  width="30" height="30" border="1"></td>
+ <td  type="button" ><a href="vercarrito.php?" title="Ver el contenido del carrito">
 
 </body>
 </html>

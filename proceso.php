@@ -21,9 +21,11 @@
 					$row = mysql_fetch_array($log);
 					$_SESSION["usuario"] = $row['nombres'];
 				  	echo 'Iniciando sesión para '.$_SESSION['usuario'].' <p>';
-					echo '<script> window.location="index2.php"; </script>';
+					echo '<script> window.location="index.php"; </script>';
+					
 				}
 				else{
+
 					echo '<script> alert("Usuario o contraseña incorrectos.");</script>';
 					echo '<script> window.location="login2.php"; </script>';
 				}

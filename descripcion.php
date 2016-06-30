@@ -47,14 +47,24 @@ $categoria   = $descripcion ['categoria'];
 
 echo "<br>";
 //  echo $imagenes;
+
+echo "<br>";
+echo "</br>";
+
 echo "<center>";
   echo "<img src = '$imagenes' width ='280' height = '280'";
   echo "<br>";
   echo "</br>";
   echo "<br>";
+  echo '<form class="" action="catalogo.php" method="post" ALIGN="center">';
+      echo "<input type= 'hidden' name='ID' value='$ID'>";
+      echo ' <input type="submit" name="name" value="Comprar" ';
+      echo "<br>";
+      echo "</br>";
   echo "<label>";
   echo "Precio: ";echo "B/.";
   echo "</label>";
+
 
   echo $precio;
   echo "<br>";
@@ -100,18 +110,14 @@ echo "</center>";
 
 }
 echo "<center>";
-echo '<a href="catalogo.php">Comprar</a>';
+//echo '<a href="catalogo.php">Comprar</a>';
 //echo ' <input type="submit" name="name" value="comprar">';
 echo "</center>";
 
 
  ?>
 
- <?php
 
-echo '<form class="" action="catalogo.php" method="post">';
-     echo "<input type= 'hidden' name='ID' value='$ID'>";
-     echo ' <input type="submit" name="name" value="detalle" ';?>
 
 
 
