@@ -158,12 +158,12 @@ session_start();
 
 															 			<div id="navbar">
 															 				<ul>
-															 					<li><a href="index.php">Start</a></li><li><span></span></li>
+															 					<li><a href="index.php">Home</a></li><li><span></span></li>
 															 				<li><a href="#">About</a></li><li><span></span></li>
 															 					<li><a href="registro.php">Sign in</a></li><li><span></span></li>
 															 					<li><a href="productos_insert.php" >Sale</a></li><li><span></span></li>
-															 					<li><a href="login2.php">Login</a></li><li><span></span></span></li></li>
-																				<li><a href="vercarrito.php?" class="divider">Ver Carrito</a></li>
+															 					<li><a href="login2.php">Login</a></li><li><span></span></span></li>
+																				<li><a href="vercarrito.php?" class="divider">Ver Carrito</a></span></li>
 
 
 															 				</ul>
@@ -198,12 +198,13 @@ session_start();
         if(isset($_SESSION['usuario']))
         {
 
-          echo "usuario:". $_SESSION ['usuario'] ;
+          echo "User:". $_SESSION ['usuario'] ;
 					echo "<br>";
 					echo '<input name="imageField" type="image" src="images/user.png"  width="30" height="30" border="0">';
 					echo "<br>";
           echo "<p ALIGN = right  style='color:blue;'>";
-          echo "<a href='logout.php'>salir</a>";
+          echo "<a style='color:Red;' href='logout.php'>Exit</a>";
+
           echo "</p>";
 
         }
@@ -258,6 +259,7 @@ session_start();
 							echo "<tr>";
 							echo "<tr>";
 							echo "</table>";
+							
 							echo "<p>"; echo "B/."."$precio" . "&nbsp"; "</p>";
 							echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
 							echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
@@ -320,9 +322,6 @@ session_start();
 
 
 </div>
-<h1>Ver Carrito</h1>
- <input name="imageField" type="image" src="images/vercarrito.gif"  width="30" height="30" border="1"></td>
- <td  type="button" ><a href="vercarrito.php?" title="Ver el contenido del carrito">
 
 </body>
 </html>

@@ -40,8 +40,8 @@ $qry = mysql_query("SELECT * FROM  inventario2, categoria where inventario2.ID =
             <tr valign="middle" bordercolor="#FFFFFF" bgcolor="#DFDFDF" class="catalogo">
                 <td width="270"><strong>Producto</strong></td>
                 <td width="77"><strong>Precio</strong></td>
-              <!--  <td width="25" align="right"><a href="vercarrito.php?" title="Ver el contenido del carrito"> -->
-                        <img width="25" height="21" border="0"></a></td>
+
+
                         <br>
                         <img src="img/logoR.jpg">
             </tr>
@@ -67,7 +67,7 @@ echo '<a href="index.php">Volver al Catálogo</a>';
                         } else {
 
                             ?><a href="borracar.php?<?php echo SID ?>&id=<?php echo $row['ID']; ?>">
-                                <img src="images/carritoAD.gif" border="0" title="Quitar del Carrito"></a><?php } ?></td>
+                                <img src="images/remove.jpg" border="0" title="Quitar del Carrito" width="50" height="50"></a><?php } ?></td>
                 </tr><?php } ?>
         </table>
     </body>

@@ -20,7 +20,8 @@ if(isset($_SESSION['usuario'])) {?>
 
 <?php
 echo "<br>";
-echo '<a href="index.php">Volver al Catálogo</a>';
+echo "</br>";
+echo '<a href="index.php"><img src="images/continu.jpg" width="160" height="35" border="0" id="categoriebottLT"></a>';
 include 'db.php' ;
 echo conectar();
 
@@ -58,7 +59,9 @@ echo "<center>";
   echo "<br>";
   echo '<form class="" action="catalogo.php" method="post" ALIGN="center">';
       echo "<input type= 'hidden' name='ID' value='$ID'>";
-      echo ' <input type="submit" name="name" value="Comprar" ';
+      echo ' <input type="submit" name="name" value="Mostrar Detalles Para Comprar">';
+      echo "<br>";
+      echo "</br>";
       echo "<br>";
       echo "</br>";
   echo "<label>";
@@ -131,7 +134,7 @@ echo "</center>";
 
  <div id="headder" >
    <div>
-   <p class="pull-left">&copy; <?php echo date('Y') ?>Copyright © 2016 TAU Corporation. All Rights Reserved.</p>
+   <p align="center" class="pull-left">&copy; <?php echo date('Y') ?>Copyright © 2016 TAU Corporation. All Rights Reserved.</p>
    </div>
 
 
