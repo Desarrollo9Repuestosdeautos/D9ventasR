@@ -2,6 +2,8 @@
 session_start();
 
 $carro = $_SESSION['carro'];
+//$carro=md5($_SESSION['carro']);
+//$v = $_GET ['suma'];
 
 $products = '';
 $products2 = '';
@@ -48,7 +50,7 @@ $products2 = substr($products2, 0, (strlen($products2) - 2));
 
                 <input type="hidden" name="shipping" value="0">
 
-                <input type="hidden" name="cbt" value="Presione aqui para volver a www.nuestrositio.com >>">
+                <input type="hidden" name="cbt" value="Presione aqui para volver a www.CasadeRepuesto.com >>">
                 <input type="hidden" name="cmd" value="_xclick">
 
                 <input type="hidden" name="rm" value="2">
@@ -59,7 +61,7 @@ $products2 = substr($products2, 0, (strlen($products2) - 2));
                 <input type="hidden" name="item_name" value="<?php echo $products2; ?>">
                 <input type="hidden" name="item_number" value="Nombre del comprador">
 
-                <input type="hidden" name="amount" value="<?php echo number_format($_GET['costo'], 2) ?>">
+                <input type="hidden" name="amount" value="<?php echo base64_decode($_GET['costo'], 2) ?>">
 
                 <input type="hidden" name="custom" value="<?php echo $_GET['costo'] ?>">
 
@@ -73,12 +75,12 @@ $products2 = substr($products2, 0, (strlen($products2) - 2));
 
                 <input type="hidden" name="no_shipping" value="0">
                 <input type="hidden" name="no_note" value="0">
-              +
+
                 <table width="60%" border="0" align="center" cellpadding="6" cellspacing="0" bgcolor="#EABB5D" style=" border-color:#000000; border-style:solid;border-width:3px;">
                     <tr>
-                        <td align="left" valign="top"><span class="prod"><strong>Detalle de los Productos Seleccionados</strong>:</span><br>
+                        <td align="left" valign="top"><span class="catalogo"><strong>Detalle de los Productos Seleccionados</strong>:</span><br>
                             <span class="texto1negro"> </span><span class="prod"><strong>Productos: </strong><?php echo $products; ?><br>
-                                <strong>Pecio Total:</strong> $<?php echo number_format($_GET['costo'], 2) ?> </span></td>
+                                <strong>Pecio Total:</strong> $<?php echo base64_decode($_GET['costo'], 2) ?> </span></td>
                     </tr>
                 </table>
                 <input type="submit" name="Submit" value="Enviar">

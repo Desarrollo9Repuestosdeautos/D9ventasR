@@ -1,6 +1,6 @@
 <?php
 session_start();
-error_reporting(0);
+error_reporting(0);//letst
 $carro = $_SESSION['carro'];
 ?>
 <html>
@@ -49,7 +49,7 @@ $carro = $_SESSION['carro'];
                     $suma = $suma + $subto;
                     $contador++;
                     ?>
-                    <form name="a<?php echo $v['identificador'] ?>" method="post" action="agregacar.php?<?php echo SID ?>" id="a<?php echo $v['identificador'] ?>">
+                    <form name="a<?php echo $v['identificador'] ?>" method="post" enctype="application/x-www-form-urlencoded" action="agregacar.php?<?php echo SID ?>" id="a<?php echo $v['identificador'] ?> ">
                         <tr bgcolor="<?php echo $color[$contador % 2]; ?>" class='prod'>
                             <td><?php echo $v['producto'] ?></td>
                             <td><?php echo $v['precio'] ?></td>
@@ -65,11 +65,12 @@ $carro = $_SESSION['carro'];
             </table>
             <div align="center"><span class="prod">Total de Artículos: <?php echo count($carro); ?></span>
             </div><br>
-            <div align="center"><span class="prod">Total: $<?php echo number_format($suma, 2); ?></span></div>
+            <div align="center"><span class="prod">Total: $<?php echo ($suma); ?></span></div>
             <br>
             <div align="center"><span class="prod"></span>
                 <a href="index.php?<?php echo SID; ?>"><br><img src="images/continu.jpg" width="50" height="15" border="0" align="absmiddle"></a>
-                <a href="regpago.php?<?php echo SID; ?>&costo=<?php echo $suma; ?>"><img src="images/finalizarcompra.gif" width="135" height="17" border="0" align="absmiddle"></a>
+<a href="regpago.php?<?php echo SID ?>&costo=<?php echo base64_encode($suma) ?>"><img src="images/finalizarcompra.gif" width="135" height="17" border="0" align="absmiddle" enctype="application/x-www-form-urlencoded"></a>
+
             </div>
         <?php } else { ?>
             <p align="center"> <span class="prod">No hay productos seleccionados</span> <a href="index.php?<?php echo SID; ?>"><img src="images/continu.jpg" width="80" height="20" border="1"></a>
