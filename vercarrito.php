@@ -37,7 +37,7 @@ $carro = $_SESSION['carro'];
                     <td width="207">Precio</td>
                     <td colspan="2" align="center">Cantidad de Unidades</td>
                     <td width="100" align="center">Borrar</td>
-                    <td width="159" align="center">Actualizar</td>
+                  <!--  <td width="159" align="center">Actualizar</td> -->
                 </tr>
                 <?php
                 $color = array("#ffffff", "#F0F0F0");
@@ -58,7 +58,7 @@ $carro = $_SESSION['carro'];
                                 <input name="id" type="hidden" id="id" value="<?php echo $v['ID'] ?>"> </td>
                             <td align="center"><a href="borracar.php?<?php echo SID ?>&id=<?php echo $v['ID'] ?>"><img src="images/trash.gif" width="12" height="14" border="0"></a></td>
                             <td align="center">
-                                <input name="imageField" type="image" src="images/actualizar.gif" width="20" height="20" border="0"></td>
+                              <!--  <input name="imageField" type="image" src="images/actualizar.gif" width="20" height="20" border="0"></td>-->
                         </tr></form>
                 <?php } ?>
             </table>
@@ -67,11 +67,11 @@ $carro = $_SESSION['carro'];
             <div align="center"><span class="prod">Total: $<?php echo number_format($suma, 2); ?></span></div>
             <br>
             <div align="center"><span class="prod">Continuar la selección de productos</span>
-                <a href="catalogo.php?<?php echo SID; ?>"><img src="images/continuar.gif" width="15" height="15" border="0" align="absmiddle"></a>
+                <a href="index.php?<?php echo SID; ?>"><img src="images/continuar.gif" width="15" height="15" border="0" align="absmiddle"></a>
                 <a href="regpago.php?<?php echo SID; ?>&costo=<?php echo $suma; ?>"><img src="images/finalizarcompra.gif" width="135" height="16" border="0" align="absmiddle"></a>
             </div>
         <?php } else { ?>
-            <p align="center"> <span class="prod">No hay productos seleccionados</span> <a href="catalogo.php?<?php echo SID; ?>"><img src="images/continuar.gif" width="13" height="13" border="0"></a>
+            <p align="center"> <span class="prod">No hay productos seleccionados</span> <a href="index.php?<?php echo SID; ?>"><img src="images/continuar.gif" width="13" height="13" border="0"></a>
                 <?php } ?>
         </p>
     </body>

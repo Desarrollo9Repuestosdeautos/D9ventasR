@@ -17,7 +17,7 @@ $carro=$_SESSION['carro'];
 
 $carro[md5($id)]=array('identificador'=>md5($id),
 'cantidad'=>$cantidad,'producto'=>$row['nombre_producto'],
-'precio'=>$row['precio'],'id'=>$id);
+'precio'=>$row['precio'],'ID'=>$id);
 
 $_SESSION['carro']=$carro;
 

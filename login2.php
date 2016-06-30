@@ -81,11 +81,13 @@ input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgb
     <div class="login">
 	<h1>Login</h1>
     <form class="" action="proceso.php" method="post">
-
-
+<?php
+      echo '<a href="registro.php" class="btn btn-primary btn-block btn-large">Sign up</a>';?>
+      <br>
+      <br/>
     	<input type="text" name="nombre" placeholder="Username" required="required" />
         <input type="password" name="contraseña" placeholder="Password" required="required" />
-        <button type="submit" name "login" class="btn btn-primary btn-block btn-large">entrar.</button>
+        <button type="submit" name "login" class="btn btn-primary btn-block btn-large">Sign in</button>
     </form>
 </div>
 

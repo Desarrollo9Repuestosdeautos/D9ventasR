@@ -107,7 +107,7 @@ session_start();
 															 						<div class="boxmainRT" style="width: 144px;">
 															 							<ul>
                                               <br/>
-
+																								<!--método categoria en el cual se selecciona y se ordena por categoria -->
                                               <h1>Categoría:</h1>
                                               <br/>
                                               <form id="buscado" name="buscado" method="post" action="<?php echo $_SERVER['PHP_SELF']?>">
@@ -180,7 +180,7 @@ session_start();
           echo "usuario:". $_SESSION ['usuario'] ;
           echo "<br>";
           echo "<p ALIGN = right  style='color:blue;'>";
-          echo "<a href='logout.php'>salir</a>";
+          echo "<a href='logout.php'>Salir</a>";
           echo "</p>";
 
         }
@@ -231,12 +231,13 @@ session_start();
 							echo "<tr>";
 							echo "<tr>";
 							echo "</table>";
-							echo "<p>"; echo "B/."."$precio" . "$". "&nbsp"; "</p>";
+							echo "<p>"; echo "B/."."$precio" . "&nbsp"; "</p>";
 							echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
 							echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
 							echo "<br/>";
-
+							echo "<br/>";
             	echo '<form class="" action="descripcion.php" method="post">';
+							echo "<br/>";
 							echo "<br/>";
 							echo "<input type= 'hidden' name='ID' value='$ID'>";
 							echo ' <input type="submit" name="name" value="detalle" ';

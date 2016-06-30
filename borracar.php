@@ -26,5 +26,5 @@ $_SESSION['carro']=$carro;
 //la sessión, como hicimos
 //cuando agregamos un producto
 //y volvemos al catálogo
-header("Location:catalogo.php?".SID);
+header("Location:vercarrito.php?".SID);
 ?>

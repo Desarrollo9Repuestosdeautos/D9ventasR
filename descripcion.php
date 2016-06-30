@@ -1,3 +1,10 @@
+
+<?php
+session_start();
+//include 'db.php';
+//echo conectar();
+
+if(isset($_SESSION['usuario'])) {?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -20,7 +27,7 @@ echo conectar();
 $ID = $_POST ['ID'];
 
 
-//$select = mysql_query("SELECT * FROM  inventario2 where codigo = '$codigo1'");
+
 
 $select = mysql_query("SELECT * FROM  inventario2, categoria where inventario2.ID = '$ID' AND inventario2.categoria = categoria.id");
 
@@ -100,6 +107,13 @@ echo "</center>";
 
  ?>
 
+ <?php
+
+echo '<form class="" action="catalogo.php" method="post">';
+     echo "<input type= 'hidden' name='ID' value='$ID'>";
+     echo ' <input type="submit" name="name" value="detalle" ';?>
+
+
 
   <br>
    <br>
@@ -119,3 +133,10 @@ echo "</center>";
 
 </body>
 </html>
+
+<?php
+}else{
+	echo '<script> alert("para realizar esta acccion debe registrarse en el sistema.");</script>';
+	echo '<script> window.location="registro.php"; </script>';
+}
+?>

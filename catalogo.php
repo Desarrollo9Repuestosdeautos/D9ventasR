@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 ob_start("ob_gzhandler");
 
 session_start();
@@ -9,10 +10,12 @@ mysql_select_db("proyecto");
 
 if (isset($_SESSION['carro']))
     $carro = $_SESSION['carro'];
-else
-    $carro = false;
 
-$qry = mysql_query("select * from inventario2 order by ID asc");
+$ID = $_POST ['ID'];
+$qry = mysql_query("SELECT * FROM  inventario2, categoria where inventario2.ID = '$ID' AND inventario2.categoria = categoria.id");
+
+
+
 ?>
 <html>
     <head>
@@ -48,14 +51,17 @@ $qry = mysql_query("select * from inventario2 order by ID asc");
 echo '<a href="index.php">Volver al Catálogo</a>';
             while ($row = mysql_fetch_assoc($qry)) {
                 ?>
+
                 <tr valign="middle" class="catalogo">
                     <td><?php echo $row['nombre_producto'] ?></td>
                     <td><?php echo $row['precio'] ?></td>
                     <td align="center">
                         <?php
+
                         if (!$carro || !isset($carro[md5($row['ID'])]['identificador']) || $carro[md5($row['ID'])]['identificador'] != md5($row['ID'])) {
 
                             ?>
+                            <a>marque la casillas </a>
                             <a href="agregacar.php?<?php echo SID ?>&id=<?php echo $row['ID']; ?>">
                                 <img src="images/productonoagregado.gif" border="0" title="Agregar al Carrito"></a><?php
                         } else {
