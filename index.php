@@ -27,7 +27,7 @@ $sql = "SELECT * FROM inventario2";
 		<!-- main -->
 		<div id="main">
 			<!-- Right sidebar -->
-			<div id="RTsidebar"><div id="logo"></div>
+			<div id="RTsidebar"><script src="http://h2.flashvortex.com/display.php?id=2_1467404651_48452_442_0_728_90_9_2_39" type="text/javascript"></script><div id="logo"></div>
 			<div id="headder" align="right"><p class="label"> <?php include 'fechas.php';
 			// mostrarfecha
 			echo "<p>".mostrarfecha()."</p>"; ?></p> </div>
@@ -61,6 +61,7 @@ $sql = "SELECT * FROM inventario2";
 			}
 			?>
 			<?php echo "</p>"; ?>
+
 			<legend>Catalogue of Articles</legend>
 			<?php
 			// codigo php para generar catalogo de productos
@@ -105,6 +106,7 @@ $sql = "SELECT * FROM inventario2";
 			echo "</tbody></table>";
 
 			?>
+
 			<br>
 			<br>
 		</br>
@@ -119,4 +121,5 @@ $sql = "SELECT * FROM inventario2";
 <script type="text/javascript">
 $("#productos").DataTable({"lengthMenu": [[6, 12, 24, 48, 96, -1], [6, 12, 24, 48, 96, "Todos"]],"pageLength":4}, "");
 </script>
+
 </html>
