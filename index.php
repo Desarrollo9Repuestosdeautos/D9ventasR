@@ -27,7 +27,8 @@ $sql = "SELECT * FROM inventario2";
 		<!-- main -->
 		<div id="main">
 			<!-- Right sidebar -->
-			<div id="RTsidebar"><script src="http://h2.flashvortex.com/display.php?id=2_1467404651_48452_442_0_728_90_9_2_39" type="text/javascript"></script><div id="logo"></div>
+			<div id="RTsidebar">
+				<script src="http://h2.flashvortex.com/display.php?id=2_1467404651_48452_442_0_728_90_9_2_39" autofocus type="text/javascript"></script><div id="logo"></div>
 			<div id="headder" align="right"><p class="label"> <?php include 'fechas.php';
 			// mostrarfecha
 			echo "<p>".mostrarfecha()."</p>"; ?></p> </div>
