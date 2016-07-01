@@ -1,5 +1,5 @@
 * {margin:0;padding:0}
-#body {background-color:yellow;width:820}
+#body {background-color:yellow;width:220}
 .fleft {float:left}
 .fright {float:right}
 .fclear {clear:both}
@@ -7,7 +7,7 @@
 a, a:hover {text-decoration:none}
 img {border:0}
 fieldset {border:1px solid #15689a;margin-top:20px}
-legend {font-family:Arial, Helvetica, sans-serif;font-size:20px;color:#15689a}
+legend {font-family:Arial, Helvetica, sans-serif;font-size:22px;color:#15689a;width:220px;}
 .clear {clear:both;height:0;font-size:0}
 /* Testimonials */
 h1 {margin:6px 0 0 5px;font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#285f80 float:left;width:300px}
@@ -15,7 +15,7 @@ h2 {margin:0 0 10px 55px;font-family:Arial, Helvetica, sans-serif;font-size:20px
 h3 {color: #3486F8;font-size:25px;}
 h4 {font-family:Arial, Helvetica, sans-serif;font-size:25px;color:#424242;font-weight:normal}
 .label {margin:10px 0 5px;font-family:Arial, Helvetica, sans-serif;font-size:12px;color:#7f7f7f;font-weight:bold}
-.label2 {margin:10px 0 8px;font-family:Arial, Helvetica, sans-serif;font-size:11px;color:#7f7f7f;font-weight:normal}
+.label2 {margin:10px 0 8px;font-family:Arial, Helvetica, sans-serif;font-size:11px;color:#7f7f7f;font-weight:center}
 .label3 {margin:12px 2 2px;  padding-right: 30px; font-family:Arial, Helvetica, sans-serif;font-size:13px;color:#7f7f7f;font-weight:bold }
 
 
@@ -24,12 +24,12 @@ a.companyname {font-family:Arial, Helvetica, sans-serif;font-size:11px;color:#1c
 .normalcon {margin:10px 0 30px 0;font-family:Arial, Helvetica, sans-serif;font-size:11px;color:#424242;font-weight:normal}
 .redborder {border:1px solid #f00}
 /* main */
-#main {margin:0 auto;width:500px}
+#main {margin:0 auto;width:250px}
 /* Left sidebar */
 /* este css es para la ubicacion del logotipo de la empresa */
 
 #LTsidebar {float:left;width:213px}
-#logo {margin:-70px 0px 0px -40px;width:280px;height:220px;background:url(../img/logoR.jpg) no-repeat top left}
+#logo {margin:-60px 0px -150px 600px;width:280px;height:220px;background:url(../img/logoR.jpg) no-repeat top left}
 /* Box */
 #logos {margin:10px 0px 0px 40px;width:340px;height:170px;background:url(../img/otrologo.jpg) no-repeat top left}
 .boxheadRT {float:left;height:21px;background:url(../img/box_headder.jpg) no-repeat top left}
