@@ -19,7 +19,7 @@ class PHPPaging {
         *       </code>
         *       @var int
         */
-        var $porPagina = 6;
+        var $porPagina = 100;
 
 
         /**

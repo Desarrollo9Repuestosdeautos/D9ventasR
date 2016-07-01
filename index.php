@@ -3,325 +3,345 @@ session_start();
 
 ?>
 
-			<?php
-			error_reporting(0);
-			// Definimos la conexión
-			include'db.php';
-			echo  conectar();
-			$sql = "SELECT * FROM inventario2";
-					$texto = ''; //Variable que contendrá el resultado de la búsqueda
-					$registros = ''; //Variable que contendrá el número de resgistros encontrados
-
-					if($_POST){  $busqueda = trim($_POST['buscar']);
-						 $entero = 0;  if (empty($busqueda)){ $texto = ''; }
-						 else{ // Si hay información para buscar, abrimos la conexión
-							 conectar(); mysql_set_charset('utf8');
-
-               // para indicar a la bbdd que vamos a mostrar la info en utf
-							 //Contulta para la base de datos, se utiliza un comparador LIKE para acceder a todo lo que contenga la cadena a buscar
-							$sql = "SELECT * FROM inventario2 WHERE nombre_producto LIKE '%" .$busqueda. "%' ORDER BY ID";
-              // $sql = "SELECT * FROM inventario2 WHERE precio LIKE '%" .$busqueda. "%' ORDER BY ID";
-								 $resultado = mysql_query($sql);
-							 //Ejecución de la consulta //Si hay resultados...
-							 if (mysql_num_rows($resultado) > 0){  // Se recoge el número de resultados
-								 $registros = '<p>' . mysql_num_rows($resultado) . ' registros encontrados</p>';
-					 				// Se almacenan las cadenas de resultado
-									while($fila = mysql_fetch_assoc($resultado)){  $texto .= $fila['null'] . '<br />'; }
-								}else{ $texto = "NO HAY RESULTADOS EN SU BUSQUEDA";	 } }}
-								 // Después de trabajar con la bbdd, cerramos la conexión (por seguridad, no hay que dejar conexiones abiertas)
-			mysql_close($conexion);?>
-      <?php
-      $textos = ''; //Variable que contendrá el resultado de la búsqueda
-      $registro = ''; //Variable que contendrá el número de resgistros encontrados
-
-
-      if($_POST){  $busquedas = trim($_POST['busca']);
-         $entero = 0;  if (empty($busquedas)){ $textos = 'Búsqueda sin resultados'; }
-         else{ // Si hay información para buscar, abrimos la conexión
-           conectar(); mysql_set_charset('utf8');
-
-           // para indicar a la bbdd que vamos a mostrar la info en utf
-           //Contulta para la base de datos, se utiliza un comparador LIKE para acceder a todo lo que contenga la cadena a buscar
-          $sql = "SELECT * FROM inventario2 WHERE categoria LIKE '%" .$busquedas. "%' ORDER BY ID";
-          // $sql = "SELECT * FROM inventario2 WHERE precio LIKE '%" .$busqueda. "%' ORDER BY ID";
-             $resultad = mysql_query($sql);
-           //Ejecución de la consulta //Si hay resultados...
-           if (mysql_num_rows($resultad) > 0){  // Se recoge el número de resultados
-             $registros = '<p>' . mysql_num_rows($resultad) . ' registros encontrados</p>';
-              // Se almacenan las cadenas de resultado
-              while($filas = mysql_fetch_assoc($resultad)){  $textos .= $filas['null'] . '<br />'; }
-            }else{ $textos = "NO HAY RESULTADOS EN LA BBDD";	 } }}
-             // Después de trabajar con la bbdd, cerramos la conexión (por seguridad, no hay que dejar conexiones abiertas)
-  mysql_close($conexion);
-
-
-															 // Se muestran los resultados de la consulta, número de registros y contenido.
-															 //echo $registros;
-															 echo $texto; ?>
-
-															 <!DOCTYPE html PUBLIC>
-															 <html >
-															 <head>
-															 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-															 <title>Tienda de piezas</title>
-															 <link href="css/style.css" rel="stylesheet" type="text/css" />
-															 <link href="css/estilo.css" rel="stylesheet" type="text/css" />
-
-															 </head>
-
-															 <body bgcolor="#F7F7F7">
-															 <!-- main -->
-															 <div id="main">
-															 <!-- Left side bar -->
-															 	<div id="LTsidebar">
-															 		<div id="logo"></div>
-															 <!-- Quick Search -->
-
-
-
-
-															 			<div id="quicksearch">
-															 				<div id="quickheadRT" class="boxheadRT"><h1>Búsqueda General</h1></div>
-															 				<div class="boxheadLT"></div>
-															 					<div class="boxmain">
-															 						<div class="boxmainRT" style="width:144px">
-															 							<br>
-															 							<form id="buscador" name="buscador" method="post" action="<?php echo $_SERVER['PHP_SELF']?>">
-															 							<input  id="buscar" name="buscar" type="search" placeholder="Buscar en todo..." autofocus >
-															 						</br>
-																					<br>
-																					<?php echo $registros ?>
-															 						<br>
-															 							<input type="submit" name="buscador" class="boton peque aceptar" value="buscar">
-
-
-															 						</div>
-															 					 	<div class="boxmainLT"></div>
-															 					</div>
-															 				<div class="boxbottRT"></div>
-															 				<div id="quickbottLT" class="boxbottLT"></div>
-															 			</div>
-															 			<div class="clear"></div>
-															       <br>
-															       <br>
+<?php
+error_reporting(0);
+// Definimos la conexión
+include'db.php';
+echo  conectar();
+$sql = "SELECT * FROM inventario2";
+$texto = ''; //Variable que contendrá el resultado de la búsqueda
+$registros = ''; //Variable que contendrá el número de resgistros encontrados
+
+if($_POST){  $busqueda = trim($_POST['buscar']);
+	$entero = 0;  if (empty($busqueda)){ $texto = ''; }
+	else{ // Si hay información para buscar, abrimos la conexión
+		conectar(); mysql_set_charset('utf8');
+
+		// para indicar a la bbdd que vamos a mostrar la info en utf
+		//Contulta para la base de datos, se utiliza un comparador LIKE para acceder a todo lo que contenga la cadena a buscar
+		$sql = "SELECT * FROM inventario2 WHERE nombre_producto LIKE '%" .$busqueda. "%' ORDER BY ID";
+		// $sql = "SELECT * FROM inventario2 WHERE precio LIKE '%" .$busqueda. "%' ORDER BY ID";
+		$resultado = mysql_query($sql);
+		//Ejecución de la consulta //Si hay resultados...
+		if (mysql_num_rows($resultado) > 0){  // Se recoge el número de resultados
+			$registros = '<p>' . mysql_num_rows($resultado) . ' registros encontrados</p>';
+			// Se almacenan las cadenas de resultado
+			while($fila = mysql_fetch_assoc($resultado)){  $texto .= $fila['null'] . '<br />'; }
+		}else{ $texto = "NO HAY RESULTADOS EN SU BUSQUEDA";	 } }}
+		// Después de trabajar con la bbdd, cerramos la conexión (por seguridad, no hay que dejar conexiones abiertas)
+		mysql_close($conexion);?>
+		<?php
+		$textos = ''; //Variable que contendrá el resultado de la búsqueda
+		$registro = ''; //Variable que contendrá el número de resgistros encontrados
+
+
+		if($_POST){  $busquedas = trim($_POST['busca']);
+			$entero = 0;  if (empty($busquedas)){ $textos = 'Búsqueda sin resultados'; }
+			else{ // Si hay información para buscar, abrimos la conexión
+				conectar(); mysql_set_charset('utf8');
+
+				// para indicar a la bbdd que vamos a mostrar la info en utf
+				//Contulta para la base de datos, se utiliza un comparador LIKE para acceder a todo lo que contenga la cadena a buscar
+				$sql = "SELECT * FROM inventario2 WHERE categoria LIKE '%" .$busquedas. "%' ORDER BY ID";
+				// $sql = "SELECT * FROM inventario2 WHERE precio LIKE '%" .$busqueda. "%' ORDER BY ID";
+				$resultad = mysql_query($sql);
+				//Ejecución de la consulta //Si hay resultados...
+				if (mysql_num_rows($resultad) > 0){  // Se recoge el número de resultados
+					$registros = '<p>' . mysql_num_rows($resultad) . ' registros encontrados</p>';
+					// Se almacenan las cadenas de resultado
+					while($filas = mysql_fetch_assoc($resultad)){  $textos .= $filas['null'] . '<br />'; }
+				}else{ $textos = "NO HAY RESULTADOS EN LA BBDD";	 } }}
+				// Después de trabajar con la bbdd, cerramos la conexión (por seguridad, no hay que dejar conexiones abiertas)
+				mysql_close($conexion);
+
+
+				// Se muestran los resultados de la consulta, número de registros y contenido.
+				//echo $registros;
+				echo $texto; ?>
+
+				<!DOCTYPE html PUBLIC>
+				<html >
+				<head>
+					<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+					<title>Tienda de piezas</title>
+					<link href="css/style.css" rel="stylesheet" type="text/css" />
+					<link href="css/estilo.css" rel="stylesheet" type="text/css" />
+					<link rel="stylesheet" type="text/css" href="DataTables/datatables.css"/>
+					<!-- <script type="text/javascript" src="datatables/jquery-2.2.3.min.js"></script> -->
+					<script type="text/javascript" src="DataTables/datatables.js"></script>
+				</head>
+
+				<body bgcolor="#F7F7F7">
+					<!-- main -->
+					<div id="main" align="center">
+						<!-- Left side bar
+						<div id="LTsidebar">
+							<div id="logo"></div>
+
+
+
+
+
+							<div id="quicksearch">
+								<div id="quickheadRT" class="boxheadRT"><h1>Búsqueda General</h1></div>
+								<div class="boxheadLT"></div>
+								<div class="boxmain">
+									<div class="boxmainRT" style="width:144px">
+										<br>
+										<form id="buscador" name="buscador" method="post" action="<?php echo $_SERVER['PHP_SELF']?>">
+											<input  id="buscar" name="buscar" type="search" placeholder="Buscar en todo..." autofocus >
+										</br>
+										<br>
+										<?php echo $registros ?>
+										<br>
+										<input type="submit" name="buscador" class="boton peque aceptar" value="buscar">
+
+
+									</div>
+									<div class="boxmainLT"></div>
+								</div>
+								<div class="boxbottRT"></div>
+								<div id="quickbottLT" class="boxbottLT"></div>
+							</div>
+							<div class="clear"></div>
+							<br>
+							<br>
 
-															 <!-- Categories --><div class="inner_copy"></div>
-															 			<div id="categories">
-															 				<div id="categorieheadRT" class="boxheadRT"><h1>Filtrar Categorías</h1></div>
-															 		 		<div class="boxheadLT"></div>
-															 					<div class="boxmain">
-															 						<div class="boxmainRT" style="width: 144px;">
-															 							<ul>
-                                              <br/>
+						<div class="inner_copy"></div>
+							<div id="categories">
+								<div id="categorieheadRT" class="boxheadRT"><h1>Filtrar Categorías</h1></div>
+								<div class="boxheadLT"></div>
+								<div class="boxmain">
+									<div class="boxmainRT" style="width: 144px;">
+										<ul>
+											<br/>
 
-																								<!--método categoria en el cual se selecciona y se ordena por categoria -->
-                                              <h1>Categoría:</h1>
-                                              <br/>
-                                              <form id="buscado" name="buscado" method="post" action="<?php echo $_SERVER['PHP_SELF']?>">
-                                              <select id="busca" name="busca" style="width: 108px;">
-                                                <option value="0">--Selecciona--</option>
-                                                <option value="1">Compatible con la inspeccion de automoviles</option>
-                                                <option value="2">T/M×Tren de engranajes</option>
-                                                <option value="3">Repuestos con referencia de Direccion</option>
-                                                <option value="4">Acondicionador de aire y calefaccion</option>
-                                                <option value="5">Accesorio interior</option>
-                                                <option value="6">Extremo delantero</option>
-                                                <option value="7">Parte trasera final</option>
-                                                <option value="8">Repuestos con referencia de Motor</option>
-                                                <option value="9">Repuestos con referencia de Suspension</option>
-                                                <option value="10">Repuestos con referencia de Frenos</option>
-                                                <option value="11">Audio</option>
-                                                <option value="12">Componente electrico</option>
-                                                <option value="13">Audio</option>
-                                                <option value="14">Parte lateral</option>
-                                                <option value="15">Parte de vidrio</option>
+											método categoria en el cual se selecciona y se ordena por categoria
+											<h1>Categoría:</h1>
+											<br/>
+											<form id="buscado" name="buscado" method="post" action="<?php echo $_SERVER['PHP_SELF']?>">
+												<select id="busca" name="busca" style="width: 108px;">
+													<option value="0">--Selecciona--</option>
+													<option value="1">Compatible con la inspeccion de automoviles</option>
+													<option value="2">T/M×Tren de engranajes</option>
+													<option value="3">Repuestos con referencia de Direccion</option>
+													<option value="4">Acondicionador de aire y calefaccion</option>
+													<option value="5">Accesorio interior</option>
+													<option value="6">Extremo delantero</option>
+													<option value="7">Parte trasera final</option>
+													<option value="8">Repuestos con referencia de Motor</option>
+													<option value="9">Repuestos con referencia de Suspension</option>
+													<option value="10">Repuestos con referencia de Frenos</option>
+													<option value="11">Audio</option>
+													<option value="12">Componente electrico</option>
+													<option value="13">Audio</option>
+													<option value="14">Parte lateral</option>
+													<option value="15">Parte de vidrio</option>
 
 
-                                              </select><br></br><input type="submit" name="buscado" class="boton peque aceptar" value="mostrar"><br/>
-                                              <br>
+												</select><br></br><input type="submit" name="buscado" class="boton peque aceptar" value="mostrar"><br/>
+												<br>
 
-															 									</ul>
-															 								</div>
-															 					 		<div class="boxmainLT"></div>
-															 						</div>
-															 						<div class="boxbottRT"></div>
-															 						<div id="categoriebottLT" class="boxbottLT"></div>
-															 				</div>
-															 		</div>
+											</ul>
+										</div>
+										<div class="boxmainLT"></div>
+									</div>
+									<div class="boxbottRT"></div>
+									<div id="categoriebottLT" class="boxbottLT"></div>
+								</div>
+							</div> -->
 
-															 <!-- Right sidebar -->
-															 		<div id="RTsidebar">
-															 			<div id="headder"><p class="label"> <?php include 'fechas.php';
-															 	//echo mostrarfecha();
-															   echo "<p>".mostrarfecha()."</p>"; ?></p> </div>
+							<!-- Right sidebar -->
+							<div id="RTsidebar">
+								<div id="headder"><p class="label"> <?php include 'fechas.php';
+								//echo mostrarfecha();
+								echo "<p>".mostrarfecha()."</p>"; ?></p> </div>
 
 
-															 			<div id="navbar">
-															 				<ul>
-															 					<li><a href="index.php">Home</a></li><li><span></span></li>
-															 				<li><a href="#">About</a></li><li><span></span></li>
-															 					<li><a href="registro.php">Sign in</a></li><li><span></span></li>
-															 					<li><a href="productos_insert.php" >Sale</a></li><li><span></span></li>
-															 					<li><a href="login2.php">Login</a></li><li><span></span></span></li>
-																				<li><a href="vercarrito.php?" class="divider">Ver Carrito</a></span></li>
+								<div id="navbar">
+									<ul>
+										<li><a href="index.php">Home</a></li><li><span></span></li>
+										<li><a href="#">About</a></li><li><span></span></li>
+										<li><a href="registro.php">Sign in</a></li><li><span></span></li>
+										<li><a href="productos_insert.php" >Sale</a></li><li><span></span></li>
+										<li><a href="login2.php">Login</a></li><li><span></span></span></li>
+										<li><a href="vercarrito.php?" class="divider">View Cart</a></span></li>
 
 
-															 				</ul>
+									</ul>
 
 
-																			<div class=" clear"></div>
-															         <br>
+									<div class=" clear"></div>
+									<br>
 
-															         <br>
-															         <form action = "center">
-															         </div>
+									<br>
 
+									</div>
 
 
 
-															         </form>
 
-															 				<div id="add">
+								</form>
 
+								<div id="add">
+
+
+								</div>
+							</br>
+
+						</br>
+						<div class=" clear"></div>
+
+						<?php echo "<p ALIGN = right style='color:blue;'>"; ?>
+
+
+							<?php
+
+							if(isset($_SESSION['usuario']))
+							{
 
-															 				</div>
-																			</br>
+								echo "User:". $_SESSION ['usuario'] ;
+								echo "<br>";
+								echo '<input name="imageField" type="image" src="images/user.png"  width="30" height="30" border="0">';
+								echo "<br>";
+								echo "<p ALIGN = right  style='color:blue;'>";
+								echo "<a style='color:Red;' href='logout.php'>Exit</a>";
 
-																			 </br>
-															 				<div class=" clear"></div>
+								echo "</p>";
 
-																			<?php echo "<p ALIGN = right style='color:blue;'>"; ?>
+							}
 
+							?>
+							<table id="example" class="display" cellspacing="0" width="100%">
+							</table>
+							<?php echo "</p>"; ?>
 
-					<?php
 
-        if(isset($_SESSION['usuario']))
-        {
+							<?php echo "<P ALIGN=right>"; ?>
+								<?php echo "" ?>
+								<?php echo "</p>"; ?>
+								<fieldset>
 
-          echo "User:". $_SESSION ['usuario'] ;
-					echo "<br>";
-					echo '<input name="imageField" type="image" src="images/user.png"  width="30" height="30" border="0">';
-					echo "<br>";
-          echo "<p ALIGN = right  style='color:blue;'>";
-          echo "<a style='color:Red;' href='logout.php'>Exit</a>";
+									<legend>catalogo de articulos</legend>
 
-          echo "</p>";
 
-        }
 
-         ?>
+									<?php  			// codigo php para generar catalogo de productos
+									include 'PHPPaging.lib.php';
 
-				<?php echo "</p>"; ?>
 
+									$pagina = new PHPPaging;
 
-																			 <?php echo "<P ALIGN=right>"; ?>
-																			 <?php echo "" ?>
-																			 <?php echo "</p>"; ?>
-															 		<fieldset>
+									//mostrar todo el catalogo
 
-															 			<legend>catalogo de articulos</legend>
+									$pagina -> agregarConsulta($sql);
+									$pagina -> ejecutar();
 
+									//borrar desde aqui
+									echo "<table id='productos' class='display'  width='100%' bgcolor='green'>";
+									echo "<thead><tr>";
+									echo "<th class='sorting'>Nombre</th><th></th><th>Precio</th><th></th></tr></thead><tfoot></tfoot><tbody>";
+									// hasta aqui
+									//  while ($inventario = mysql_fetch_array($select))
+									while ($res = $pagina->fetchResultado())
+									{
+										$nombre = $res ['nombre_producto'];
+										$imagen = $res ['imagen1'];
+										$precio = $res ['precio'];
+										$ID = $res ['ID'];
 
+										//borrar desde aqui
+										echo "<tr>";
+										echo "<td><h2>$nombre</h2></td>";
 
-											<?php  			// codigo php para generar catalogo de productos
-														 include 'PHPPaging.lib.php';
+										echo "<td><img src = '$imagen' id='example' width ='160' height = '160'></td>";
+										echo "<td>B/.$precio</td>";
+										echo "<td><form action='descripcion.php' method='post'>";
+										echo "<input type= 'hidden' name='ID' value='$ID'>";
+										echo '<input type="submit" name="name" value="detalle"></form></td>';
+										echo "</tr>";
+										//hasta aqui
 
 
-														$pagina = new PHPPaging;
+										// echo "<div id='products'>";
+										// echo "<div id='pro'>";
+										//
+										// echo "<h2>";
+										// echo $nombre;
+										// echo "</h2>";
+										// echo "<table>";
+										// echo "<tr>";
+										// echo "<hide>";
+										// echo "<td><img src = '$imagen' width ='160' height = '160'><td/>";
+										// echo "<tr>";
+										// echo "<tr>";
+										// echo "</table>";
+										//
+										// echo "<p>"; echo "B/."."$precio" . "&nbsp"; "</p>";
+										// echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+										// echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+										// echo "<br/>";
+										// echo "<br/>";
+										// echo '<form class="" action="descripcion.php" method="post">';
+										// echo "<br/>";
+										// echo "<br/>";
+										// echo "<input type= 'hidden' name='ID' value='$ID'>";
+										// echo ' <input type="submit" name="name" value="detalle" ';
+										// echo "</hide>";
+										// echo "</div>";
+										//
+										// echo "</div>";
+										// echo "</form>";
+										// echo "<div id='bigdivider'>";  echo "</div>";
 
-														 //mostrar todo el catalogo
 
-														$pagina -> agregarConsulta($sql);
-				$pagina -> ejecutar();
 
-      //  while ($inventario = mysql_fetch_array($select))
-           while ($res = $pagina->fetchResultado())
+									}
+									echo "</tbody></table>";//borrar
 
-					 //echo "<div id='products'>";
-						//echo "<div id='pro'>";
-        {
-             $nombre = $res ['nombre_producto'];
-             $imagen = $res ['imagen1'];
-            $precio = $res ['precio'];
-						$ID = $res ['ID'];
+									?>
 
 
-							echo "<div id='products'>";
-              echo "<div id='pro'>";
 
-             	echo "<h2>";
-							echo $nombre;
-							echo "</h2>";
-							echo "<table>";
-							echo "<tr>";
-							echo "<hide>";
-							echo "<td><img src = '$imagen' width ='160' height = '160'><td/>";
-							echo "<tr>";
-							echo "<tr>";
-							echo "</table>";
-							
-							echo "<p>"; echo "B/."."$precio" . "&nbsp"; "</p>";
-							echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
-							echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
-							echo "<br/>";
-							echo "<br/>";
-            	echo '<form class="" action="descripcion.php" method="post">';
-							echo "<br/>";
-							echo "<br/>";
-							echo "<input type= 'hidden' name='ID' value='$ID'>";
-							echo ' <input type="submit" name="name" value="detalle" ';
-							echo "</hide>";
-							echo "</div>";
 
-               echo "</div>";
-							 	echo "</form>";
-            	echo "<div id='bigdivider'>";  echo "</div>";
 
 
 
-              }
+								</fieldset>
+								<br>
+								<center>
+								<!--	<?php  	 echo $pagina->fetchNavegacion();  ?> -->
 
+								</center>
 
-            ?>
 
 
 
 
 
 
+								<br>
+								<br>
+								<br>
+								<br>
+								<br>
+								<br>
+								<br>
+								<br>
+								<br>
+								<br>
+								<br>
 
-		</fieldset>
-		<br>
-     <center>
-    <?php  	 echo $pagina->fetchNavegacion();  ?>
+								<div id="headder">
+									<div>
+										<p class="pull-left">&copy; <?php echo date('Y') ?>Copyright © 2016 TAU Corporation. All Rights Reserved.</p>
+									</div>
 
-	</center>
 
+								</div>
 
-
-
-
-
-
-    <br>
-    <br>
-    <br>
-    <br>
-     <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-        <br>
-
-		<div id="headder">
-      <div>
-      <p class="pull-left">&copy; <?php echo date('Y') ?>Copyright © 2016 TAU Corporation. All Rights Reserved.</p>
-      </div>
-
-
-</div>
-
-</body>
-</html>
+							</body>
+							<script type="text/javascript">
+							$("#productos").DataTable({"lengthMenu": [[6, 12, 24, 48, 96, -1], [6, 12, 24, 48, 96, "Todos"]],"pageLength":6}, "");
+							</script>
+							</html>

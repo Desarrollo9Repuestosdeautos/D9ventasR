@@ -92,6 +92,6 @@ if(isset($_SESSION['usuario'])) {?>
 <?php
 }else{
 	echo '<script> alert("para realizar esta acccion debe registrarse en el sistema.");</script>';
-	echo '<script> window.location="registro.php"; </script>';
+	echo '<script> window.location="login2.php"; </script>';
 }
 ?>

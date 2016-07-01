@@ -38,7 +38,7 @@ $carro = $_SESSION['carro'];
                     <td width="207">Precio</td>
                     <td colspan="2" align="center">Cantidad de Unidades</td>
                     <td width="100" align="center">Borrar</td>
-                  <!--  <td width="159" align="center">Actualizar</td> -->
+                  <td width="159" align="center">Actualizar Cantidad</td> 
                 </tr>
                 <?php
                 $color = array("#ffffff", "#F0F0F0");
@@ -58,8 +58,8 @@ $carro = $_SESSION['carro'];
                                 <input name="cantidad" type="text" id="cantidad" value="<?php echo $v['cantidad'] ?>" size="8">
                                 <input name="id" type="hidden" id="id" value="<?php echo $v['ID'] ?>"> </td>
                             <td align="center"><a href="borracar.php?<?php echo SID ?>&id=<?php echo $v['ID'] ?>"><img src="images/trash.gif" width="17" height="20" border="0"></a></td>
-
-                              <!--  <input name="imageField" type="image" src="images/actualizar.gif" width="20" height="20" border="0"></td>-->
+                            <td align="center">
+                              <input name="imageField" type="image" src="images/actualizar.gif" width="20" height="20" border="0"></td>
                         </tr></form>
                 <?php } ?>
             </table>
