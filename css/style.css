@@ -7,7 +7,7 @@
 a, a:hover {text-decoration:none}
 img {border:0}
 fieldset {border:1px solid #15689a;margin-top:20px}
-legend {font-family:Arial, Helvetica, sans-serif;font-size:22px;color:#15689a;width:220px;}
+legend {font-family:Arial, Helvetica, sans-serif;font-size:22px;color:#15689a;width:220px;margin-top:-60;}
 .clear {clear:both;height:0;font-size:0}
 /* Testimonials */
 h1 {margin:6px 0 0 5px;font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#285f80 float:left;width:300px}
@@ -24,12 +24,12 @@ a.companyname {font-family:Arial, Helvetica, sans-serif;font-size:11px;color:#1c
 .normalcon {margin:10px 0 30px 0;font-family:Arial, Helvetica, sans-serif;font-size:11px;color:#424242;font-weight:normal}
 .redborder {border:1px solid #f00}
 /* main */
-#main {margin:0 auto;width:250px}
+#main {margin:0 auto;width:200px}
 /* Left sidebar */
 /* este css es para la ubicacion del logotipo de la empresa */
 
 #LTsidebar {float:left;width:213px}
-#logo {margin:-60px 0px -150px 600px;width:280px;height:220px;background:url(../img/logoR.jpg) no-repeat top left}
+#logo {margin:-60px 0px -150px 600px;margin-top:2;width:280px;height:230px;background:url(../img/logoR.jpg) no-repeat top left}
 /* Box */
 #logos {margin:10px 0px 0px 40px;width:340px;height:170px;background:url(../img/otrologo.jpg) no-repeat top left}
 .boxheadRT {float:left;height:21px;background:url(../img/box_headder.jpg) no-repeat top left}
@@ -45,7 +45,7 @@ a.companyname {font-family:Arial, Helvetica, sans-serif;font-size:11px;color:#1c
 #quickheadRT {width:162px}
 #quickbottLT {width:175px}
 /* Categories */
-#categories {margin:20px 0 0 17px;width:180px}
+#categories {margin:20px 0 0 17px;width:80px}
 #categorieheadRT {width:162px}
 #categoriebottLT {width:175px}
 .boxmainRT ul {margin-bottom:15px;float:left;list-style:none}
@@ -54,13 +54,16 @@ a.companyname {font-family:Arial, Helvetica, sans-serif;font-size:11px;color:#1c
 /* Right sidebar */
 /* este css es el que lre da estilo a la barra de navegacion */
 #RTsidebar {float:right;width:560px}
-#headder {float:left;width:100%;background:#ebebeb}
-#headder p {margin:10px 12px 8px}
-#navbar {margin-top:45px;width:564px;height:31px;position:relative;background:url(../img/navbar.jpg) no-repeat top left}
-#navbar ul {float:left;list-style:none}
-#navbar ul li {margin:2px 11px;float:left}
-#navbar ul li span {float:left;width:12px;height:23px;background:url(../img/nav_Divider.jpg) no-repeat top left}
-#navbar ul li a {font-family:Arial, Helvetica, sans-serif;font-size:13px;font-weight:bold;color:#285f80}
+#headder {float:left;width:101%;background:#ebebeb; margin-top:-40px}
+#headder p {margin:5px 129px 5px}
+/*barra de navegacion*/
+#navbar {margin-top:-220px;width:564px;height:31px;position:relative;background:url(../img/navbar.jpg) no-repeat top left}
+/* letras*/
+#navbar ul {float:left;list-style:none;margin-top:-86}
+#navbar ul li {margin:20px 11px;float:left;}
+/*lineas paralelas*/
+#navbar ul li span {float:left;width:12px;margin-top:-2;height:23px;background:url(../img/nav_Divider.jpg) no-repeat top left}
+#navbar ul li a {font-family:Arial, Helvetica, sans-serif;margin-top:-199885;font-size:13px;font-weight:bold;color:#285f80}
 /* esta parte de css es para los estilo de los articulos dentro del catalogo de productos */
 #products {margin:10px 0;float:left;}
 #products img, #products div {float:left}

@@ -28,8 +28,9 @@ if(isset($_SESSION['usuario'])) {?>
 
 
 	<table border="1" align"center" id="table">
-		<h1>Precio:</h1><input name="precio" type="text" style="font-size:12px" value="" class="text" size="15" />
-<br>
+		<h1>Año de la Pieza:<input name="year" type="text" style="font-size:12px" class="text" value="" size="40" /></h1>
+
+	<br>
 </br>
 			<h1>Vendedor: <input name="vendedor" type="text" style="font-size:12px" class="text" value="" size="35" /></h1>
 			<br>
@@ -63,9 +64,9 @@ if(isset($_SESSION['usuario'])) {?>
 					</select><br/>
 
 					<br>
-					<h1>Año:<input name="year" type="text" style="font-size:12px" class="text" value="" size="40" /></h1>
-
+					<h1>Precio:</h1><input name="precio" type="text" style="font-size:12px" value="" class="text" size="15" />
 			<br>
+
 							<h1>Modelo:<input name="modelo" type="text" style="font-size:12px" class="text" value="" size="40" /></h1>
 
 					<br>

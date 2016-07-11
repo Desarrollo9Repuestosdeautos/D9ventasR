@@ -19,25 +19,27 @@ $sql = "SELECT * FROM inventario2";
 	<head>
 		<!-- llamamos los css y java script-->
 		<link href="css/style.css" rel="stylesheet" type="text/css" />
-		<link rel="stylesheet" type="text/css" href="DataTables/datatables.css"/>
+		<link href="http://www.jqueryscript.net/demo/DataTables-Jquery-Table-Plugin/media/css/jquery.dataTables.css" rel="stylesheet" type="text/css" />
 		<script type="text/javascript" src="DataTables/datatables.js"></script>
+		<script type="text/javascript" src="http://www.jqueryscript.net/demo/DataTables-Jquery-Table-Plugin/media/js/jquery.js"></script>
+		<script type="text/javascript" src="http://www.jqueryscript.net/demo/DataTables-Jquery-Table-Plugin/media/js/jquery.dataTables.js"></script>
+		<script type="text/javascript" src="http://www.jqueryscript.net/demo/DataTables-Jquery-Table-Plugin/media/css/jquery.dataTables.css"></script>
 
 	</head>
-	<body >
+	<body bgcolor="#C0E4EB">
 		<!-- main -->
 		<div id="main">
 			<!-- Right sidebar -->
-			<div id="RTsidebar">
-				<script src="http://h2.flashvortex.com/display.php?id=2_1467404651_48452_442_0_728_90_9_2_39" autofocus type="text/javascript"></script><div id="logo"></div>
+			<div id="RTsidebar"><script src="http://h2.flashvortex.com/display.php?id=2_1467404651_48452_442_0_728_90_9_2_39" type="text/javascript"></script><div id="logo">Ver: 1.0</div>
 			<div id="headder" align="right"><p class="label"> <?php include 'fechas.php';
 			// mostrarfecha
-			echo "<p>".mostrarfecha()."</p>"; ?></p> </div>
+			echo "<p> ".mostrarfecha()."</p>"; ?></p></div>
 
 
 			<div id="navbar">
 				<ul>
 					<li><a href="index.php">Home</a></li><li><span></span></li>
-					<li><a href="#">About</a></li><li><span></span></li>
+					<li><a href="politicas.php">About</a></li><li><span></span></li>
 					<li><a href="registro.php">Sign in</a></li><li><span></span></li>
 					<li><a href="productos_insert.php" >Sale</a></li><li><span></span></li>
 					<li><a href="login2.php">Login</a></li><li><span></span></span></li>
@@ -51,6 +53,7 @@ $sql = "SELECT * FROM inventario2";
 			<!-- muesra la sesion del usuario con el nombre y la opcion salir -->
 			<?php echo "<p ALIGN = right style='color:blue;'>";
 			echo "<br>";
+			echo "</br>";
 			if(isset($_SESSION['usuario']))
 			{
 				echo "User:". $_SESSION ['usuario'] ;
@@ -71,15 +74,47 @@ $sql = "SELECT * FROM inventario2";
 			//agreda los datos al paginador
 			$pagina -> agregarConsulta($sql);
 			$pagina -> ejecutar();
-			echo "<table  id='productos' class='display' >";
+			echo "<table border='0' cellpadding='5' cellspacing='5'>";
+			echo "	<tbody><tr> ";
+			echo "		 <td>Minimum year:</td> ";
+			echo "		 <td><select id='min' name='min' type='text'> ";
+			echo "<option value=''>All</option>";
+				for($anio=(date("Y")+1); 1970<=$anio; $anio--) {
+				echo "<option value=".$anio."&#39;>".$anio."</option>";
+			}
+			echo " </tr>";
+			echo "	 <tr> ";
+			echo "		 <td>Maximum year:</td>  ";
+			echo "<td><select id='max' name='max' type='text'>";
+			echo "<option value=''>All</option>";
+				for($anio=(date("Y")+1); 1970<=$anio; $anio--) {
+				echo "<option value=".$anio."&#39;>".$anio."</option>";
+			}
+			echo "</tr>";
+			echo	"</select></td>";
+
+			echo "</tbody></table>";
+
+			echo "<table border='0' id='productos' class = 'display' cellspacing = '0' width = '100%''>";
 			echo "<thead>";
-			echo "</br>";
-			echo "<th style='color:#A8C444;''>#</th>
-			<th style='color:#9E2323;''>Year</th>
-			<th style='color:#AE7126;''>Marca</th>
-			<th style='color:#03B521;''>Nombre</th>
-			<th></th><th style='color:#1702FC;'>Precio</th>
-			<th></th></thead><tbody>";
+			echo "<td style='color:#A8C444;'>#</td>
+			<td style='color:#9E2323;'>Year</td>
+			<td style='color:#AE7126;'>Marca</td>
+			<td style='color:#03B521;'>Nombre</td>
+			<td>Imagen</td>
+			<td style='color:#1702FC;'>Precio</td>
+			<td>.</td></thead>
+			<tfoot>
+			<tr>
+			<th></th>
+			<th>Year</th>
+			<th>Marca</th>
+			<th></th>
+			<th></th>
+			<th>Precio</th>
+			</tr>
+			</tfoot>";
+			echo "<body>";
 			echo "<br/>";
 			//  while para el paginador
 			while ($res = $pagina->fetchResultado())
@@ -93,11 +128,11 @@ $sql = "SELECT * FROM inventario2";
 				$ID = $res ['ID'];
 				//muestra los datos en la tabla
 				echo "<tr>";
-				echo "<td><h2 style='color:#A8C444;'>$id</h2></td>";
-				echo "<td><h2 style='color:#9E2323;'>$year</h2></td>";
-				echo "<td><h2 style='color:#AE7126;'>$marca</h2></td>";
-				echo "<td><h2 style='color:#03B521;'>$nombre</h2></td>";
-				echo "<td><img src = '$imagen' id='productos' width ='160' height = '160'></td>";
+				echo "<td style='color:#A8C444;'>$id</td>";
+				echo "<td style='color:#9E2323;'>$year</td>";
+				echo "<td style='color:#AE7126;'>$marca</td>";
+				echo "<td style='color:#03B521;'>$nombre</td>";
+				echo "<td><img src = '$imagen' id='productos' width ='60' height = '60'></td>";
 				echo "<td style='color:#1702FC;'>B/.$precio</td>";
 				echo "<td><form action='descripcion.php' method='post'>";
 				echo "<input type= 'hidden' name='ID' value='$ID'>";
@@ -115,12 +150,56 @@ $sql = "SELECT * FROM inventario2";
 	</br>
 	<div>
 		<!-- muesrta el año y el pie de a pagina-->
-		<p class="pull-left">&copy; <?php echo date('Y') ?> Copyright © . All Rights Reserved.</p>
+		<p class="pull-rigth" ALIGN="right"> &copy; <?php echo date('Y') ?> Copyright © . All Rights Reserved </p>
 	</div>
 </div>
 </body>
 <script type="text/javascript">
-$("#productos").DataTable({"lengthMenu": [[6, 12, 24, 48, 96, -1], [6, 12, 24, 48, 96, "Todos"]],"pageLength":4}, "");
+//$("#productos").DataTable({"lengthMenu": [[6, 12, 24, 48, 96, -1], [6, 12, 24, 48, 96, "Todos"]],"pageLength":4}, "");
+
+$(document).ready(function() {
+	var table = $('#productos').DataTable({"lengthMenu": [[4, 12, 24, 48, 96, -1], [4, 12, 24, 48, 96, "Todos"]],"pageLength":4}, "");
+
+	$("#productos tfoot th").each( function ( i ) {
+		var select = $('<select><option value="">All</option></select>')
+		.appendTo( $(this).empty() )
+		.on( 'change', function () {
+			table.column( i )
+			.search( $(this).val() )
+			.draw();
+		} );
+
+		table.column( i ).data().unique().sort().each( function ( d, j ) {
+			select.append( '<option value="'+d+'">'+d+'</option>' )
+		} );
+	} );
+} );
+
+$.fn.dataTable.ext.search.push(
+	function( settings, data, dataIndex ) {
+		var min = parseInt( $('#min').val(), 10 );
+		var max = parseInt( $('#max').val(), 10 );
+		var age = parseFloat(data[1] ||0); // use data for the age column
+
+		if ( ( isNaN( min ) && isNaN( max ) ) ||
+		( isNaN( min ) && age <= max ) ||
+		( min <= age   && isNaN( max ) ) ||
+		( min <= age   && age <= max ) )
+		{
+			return true;
+		}
+		return false;
+	}
+);
+
+$(document).ready(function() {
+	var table = $('#productos').DataTable();
+
+	// Event listener to the two range filtering inputs to redraw on input
+	$('#min, #max').keyup( function() {
+		table.draw();
+	} );
+} );
 </script>
 
 </html>
